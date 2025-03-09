@@ -392,7 +392,7 @@ function Presentation() {
           <Typography
             sx={{
               fontFamily: "Lato",
-              fontSize: 40,
+              fontSize: 35,
               color: "#fff",
               letterSpacing: 5,
               fontWeight: "bold",
@@ -515,6 +515,7 @@ function Presentation() {
           container
           direction={"row"}
           spacing={2}
+          mb={-3}
           //   pl={5}
           justifyContent={"space-around"}
           alignItems={"center"}>
@@ -623,7 +624,7 @@ function Presentation() {
               </div>
             </div>
           </Grid2>
-          <Grid2 size={3}>
+          <Grid2 size={3} mb={5}>
             <div
               style={{
                 display: "flex",
