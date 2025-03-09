@@ -1,10 +1,10 @@
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 
 function HMenu() {
-  const navItems = ["Home", "About", "Contact"];
+  const navItems = ["Accueil", "Mes services", "Contact"];
   return (
     <div>
-      <AppBar component={"nav"}>
+      <AppBar component={"nav"} sx={{ bgcolor: "#1C1C22" }} elevation={0} position="absolute">
         <Toolbar>
           <Typography
             sx={{
@@ -17,9 +17,10 @@ function HMenu() {
                 md: "block",
               },
               fontFamily: "Lato",
-              fontSize: 25,
+              fontSize: 30,
+              fontWeight: "bold",
             }}>
-            Delord.
+            Delord<span style={{ color: "#00FF99" }}> .</span>
           </Typography>
           <Box
             sx={{
@@ -32,10 +33,21 @@ function HMenu() {
               },
             }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <Button key={item} sx={{ color: "#fff", fontFamily: "Lato" }}>
                 {item}
               </Button>
             ))}
+            <Button
+              variant="contained"
+              sx={{
+                bgcolor: "#00FF99",
+                color: "#000",
+                fontFamily: "Lato",
+                borderRadius:50
+                
+              }}>
+              Rendez-vous gratuit
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

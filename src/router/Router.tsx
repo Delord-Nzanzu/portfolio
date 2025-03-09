@@ -8,14 +8,11 @@ export default function Router() {
       <Route>
         {
           //router public
-          publicRoutes.map((e, indexs) => (
-            <Route
-              key={indexs}
-              path={e?.path}
-              element={e?.component}
-              // exact={e?.exact}
-            />
-          ))
+          publicRoutes.map((e, indexs) => {
+            return (
+              <Route key={indexs} path={e.path} element={<e.component />} />
+            );
+          })
         }
       </Route>
 
@@ -23,7 +20,7 @@ export default function Router() {
         {
           //Router protect
           protectedRoutes.map((e, indexs) => (
-            <Route key={indexs} path={e.path} element={e.component} />
+            <Route key={indexs} path={e.path} element={<e.component />} />
           ))
         }
       </Route>
