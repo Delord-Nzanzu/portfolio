@@ -26,7 +26,7 @@ function HMenu() {
     {
       text: "Contact",
       id: 3,
-      link: "/",
+      link: "/contact",
     },
   ];
   const [open, setOpen] = useState<boolean>(false);

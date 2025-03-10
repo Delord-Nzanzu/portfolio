@@ -24,7 +24,7 @@ function Presentation() {
     <div
       style={{
         background: "#1C1C22",
-        marginTop: 60,
+        marginTop: 70,
         minHeight: "100vh",
       }}>
       <HMenu />

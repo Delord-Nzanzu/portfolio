@@ -1,3 +1,4 @@
+import Contacter from "../components/Contacter";
 import Presentation from "../components/Presentation";
 import Service from "../components/Service";
 
@@ -13,4 +14,5 @@ export const protectedRoutes: RouteType[] = [
 export const publicRoutes: RouteType[] = [
   { path: "/", component: Presentation, exact: true },
   { path: "/services", component: Service },
+  { path: "/contact", component: Contacter },
 ];
