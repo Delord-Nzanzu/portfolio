@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Grid2, Typography } from "@mui/material";
+import { Box, Button, Grid2, Typography } from "@mui/material";
 import HMenu from "./HMenu";
 import { Email, GpsFixed, Phone } from "@mui/icons-material";
 import TextFiels from "./Forms/TextFiels";
@@ -29,6 +29,7 @@ const idKey = import.meta.env.VITE_APP_APIKEY;
 
 function Contacter() {
   const [selectDataType, setSelectDataType] = useState<any>();
+  const [desable, setDesable] = useState<boolean>(false);
 
   const sendEmail = useFormik({
     enableReinitialize: false,
@@ -47,6 +48,7 @@ function Contacter() {
       phone: yup.string().required("les champs est obligatoire"),
     }),
     onSubmit: (e) => {
+      setDesable(true);
       emailjs
         .send(
           ServiceID, // Remplace par ton ID de service
@@ -60,13 +62,12 @@ function Contacter() {
         )
         .then(
           () => {
-            // console.log("E-mail envoyé avec succès ✅", response);
-            <Alert severity="success">`E-mail envoyé avec succès ✅.`</Alert>;
+            setDesable(false);
+            alert("E-mail envoyé avec succès ✅.");
           },
-          (error) => {
-            <Alert severity="warning">
-              `Erreur lors de l'envoi ❌. ${error}`
-            </Alert>;
+          () => {
+            alert("Erreur lors de l'envoi ❌.");
+            setDesable(false);
           }
         );
     },
@@ -209,6 +210,7 @@ function Contacter() {
               </div>
             </Box>
             <Button
+              disabled={desable}
               onClick={(_: React.MouseEvent<HTMLButtonElement>) =>
                 sendEmail.handleSubmit()
               }
