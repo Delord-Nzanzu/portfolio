@@ -47,6 +47,25 @@ function Service() {
         </>
       ),
     },
+    {
+      id: 4,
+      text: "Déploiement des application",
+      descr: (
+        <>
+          Déploiement d'applications sur un{" "}
+          <span style={{ color: "#00FF99" }}>**VPS**</span> avec une
+          configuration optimisée pour garantir des performances élevées, la
+          sécurité et la scalabilité. Mise en place des services backend et
+          frontend,{" "}
+          <span style={{ color: "#00FF99" }}>
+            {" "}
+            gestion des bases de données
+          </span>
+          , et optimisation des ressources pour assurer une expérience
+          utilisateur fluide et réactive.
+        </>
+      ),
+    },
   ];
 
   return (
@@ -74,7 +93,7 @@ function Service() {
               </Typography>
               <Typography
                 sx={{
-                  fontSize: 40,
+                  fontSize: 35,
                   fontFamily: "Courier Prime",
                   color: "#fff",
                   ":hover": {
@@ -85,7 +104,7 @@ function Service() {
               </Typography>
               <Typography
                 sx={{
-                  fontSize: 20,
+                  fontSize: 18,
                   fontFamily: "Courier Prime",
                   color: "#fff",
                 }}>
