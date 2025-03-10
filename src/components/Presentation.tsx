@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 import useTelechargementCV from "../hooks/useTelechargementCV";
 //
 function Presentation() {
-  const AnneExperience = useCounter(6);
+  const AnneExperience = useCounter(5);
   const projetContribue = useCounter(15);
   const TechnologiesMaitriser = useCounter(5);
-  const CommuniteCode = useCounter(10);
+  const CommuniteCode = useCounter(9965);
 
   const { handleDownload } = useTelechargementCV();
 
