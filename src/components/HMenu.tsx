@@ -53,7 +53,7 @@ function HMenu() {
                 xl: "none",
                 md: "none",
               },
-              fontFamily: "Lato",
+              fontFamily: "Courier Prime",
               fontSize: 30,
               fontWeight: "bold",
             }}>
@@ -69,7 +69,7 @@ function HMenu() {
                 xl: "block",
                 md: "block",
               },
-              fontFamily: "Lato",
+              fontFamily: "Courier Prime",
               fontSize: 30,
               fontWeight: "bold",
             }}>
@@ -88,17 +88,21 @@ function HMenu() {
             {navItems.map((item) => (
               <Button
                 key={item.id}
-                sx={{ color: "#fff", fontFamily: "Lato" }}
+                sx={{ color: "#fff", fontFamily: "Courier Prime" }}
                 onClick={() => nav(item.link)}>
                 {item.text}
               </Button>
             ))}
             <Button
+              component="a"
+              href="https://calendly.com/wayirenzanzu/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               variant="contained"
               sx={{
                 bgcolor: "#00FF99",
                 color: "#000",
-                fontFamily: "Lato",
+                fontFamily: "Courier Prime",
                 borderRadius: 50,
               }}>
               Rendez-vous gratuit
@@ -160,6 +164,10 @@ function HMenu() {
               </Button>
             ))}
             <Button
+              component="a"
+              href="https://calendly.com/wayirenzanzu/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               variant="text"
               fullWidth
               sx={{

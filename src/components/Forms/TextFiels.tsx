@@ -19,7 +19,7 @@ interface ITextFieldInputProps {
   type?: string;
   onBlur?: () => void;
   invalid?: boolean;
-  error?: string;
+  error?: boolean;
   visi?: boolean;
   labelError?: string;
   onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
