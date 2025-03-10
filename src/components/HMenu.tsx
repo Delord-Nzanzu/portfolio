@@ -9,10 +9,28 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function HMenu() {
-  const navItems = ["Accueil", "Mes services", "Contact"];
+  const navItems = [
+    {
+      text: "Accueil",
+      id: 1,
+      link: "/",
+    },
+    {
+      text: "Mes services",
+      id: 2,
+      link: "/services",
+    },
+    {
+      text: "Contact",
+      id: 3,
+      link: "/",
+    },
+  ];
   const [open, setOpen] = useState<boolean>(false);
+  const nav = useNavigate();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -68,8 +86,11 @@ function HMenu() {
               },
             }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff", fontFamily: "Lato" }}>
-                {item}
+              <Button
+                key={item.id}
+                sx={{ color: "#fff", fontFamily: "Lato" }}
+                onClick={() => nav(item.link)}>
+                {item.text}
               </Button>
             ))}
             <Button
@@ -130,8 +151,12 @@ function HMenu() {
               Delord<span style={{ color: "#00FF99" }}> .</span>
             </Typography>
             {navItems.map((item) => (
-              <Button fullWidth key={item} sx={{ color: "#000", fontFamily: "Lato" }}>
-                {item}
+              <Button
+                fullWidth
+                key={item.id}
+                sx={{ color: "#000", fontFamily: "Lato" }}
+                onClick={() => nav(item.link)}>
+                {item.text}
               </Button>
             ))}
             <Button
@@ -143,7 +168,7 @@ function HMenu() {
                 fontFamily: "Lato",
                 borderRadius: 50,
                 fontWeight: 700,
-                textAlign:"center"
+                textAlign: "center",
               }}>
               Rendez-vous gratuit
             </Button>

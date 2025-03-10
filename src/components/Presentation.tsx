@@ -50,8 +50,8 @@ function Presentation() {
               data-aos-easing="ease-in-sine">
               <Typography
                 sx={{
-                  fontFamily: "Lato",
-                  fontSize: 50,
+                  fontFamily: "Courier Prime",
+                  fontSize: 40,
                   color: "#fff",
                   letterSpacing: 5,
                   fontWeight: "bold",
@@ -61,7 +61,7 @@ function Presentation() {
               </Typography>
               <Typography
                 sx={{
-                  fontFamily: "Lato",
+                  fontFamily: "Courier Prime",
                   fontSize: 20,
                   color: "#fff",
                   letterSpacing: 2,
@@ -101,7 +101,7 @@ function Presentation() {
                     borderStyle: "solid",
                     borderWidth: 2,
                     color: "#00FF99",
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     borderRadius: 50,
                     fontSize: 18,
                     ":hover": {
@@ -211,7 +211,7 @@ function Presentation() {
               }}>
               <Typography
                 style={{
-                  fontFamily: "Lato",
+                  fontFamily: "Courier Prime",
                   color: "#fff",
                   fontSize: 80,
                   fontWeight: 700,
@@ -221,7 +221,7 @@ function Presentation() {
               <div style={{ marginLeft: 5, marginTop: 25 }}>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 25,
                   }}>
@@ -229,7 +229,7 @@ function Presentation() {
                 </Typography>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 25,
                   }}>
@@ -246,7 +246,7 @@ function Presentation() {
               }}>
               <Typography
                 style={{
-                  fontFamily: "Lato",
+                  fontFamily: "Courier Prime",
                   color: "#fff",
                   fontSize: 80,
                   fontWeight: 700,
@@ -256,7 +256,7 @@ function Presentation() {
               <div style={{ marginLeft: 5, marginTop: 50 }}>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 25,
                   }}>
@@ -273,7 +273,7 @@ function Presentation() {
               }}>
               <Typography
                 style={{
-                  fontFamily: "Lato",
+                  fontFamily: "Courier Prime",
                   color: "#fff",
                   fontSize: 80,
                   fontWeight: 700,
@@ -283,7 +283,7 @@ function Presentation() {
               <div style={{ marginLeft: 5, marginTop: 25 }}>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 25,
                   }}>
@@ -291,7 +291,7 @@ function Presentation() {
                 </Typography>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 25,
                   }}>
@@ -308,7 +308,7 @@ function Presentation() {
               }}>
               <Typography
                 style={{
-                  fontFamily: "Lato",
+                  fontFamily: "Courier Prime",
                   color: "#fff",
                   fontSize: 80,
                   fontWeight: 700,
@@ -318,7 +318,7 @@ function Presentation() {
               <div style={{ marginLeft: 5, marginTop: 25 }}>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 25,
                   }}>
@@ -326,7 +326,7 @@ function Presentation() {
                 </Typography>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 25,
                   }}>
@@ -390,8 +390,8 @@ function Presentation() {
           data-aos-easing="ease-in-sine">
           <Typography
             sx={{
-              fontFamily: "Lato",
-              fontSize: 35,
+              fontFamily: "Courier Prime",
+              fontSize: 25,
               color: "#fff",
               letterSpacing: 5,
               fontWeight: "bold",
@@ -402,7 +402,7 @@ function Presentation() {
           </Typography>
           <Typography
             sx={{
-              fontFamily: "Lato",
+              fontFamily: "Courier Prime",
               fontSize: 20,
               color: "#fff",
               letterSpacing: 2,
@@ -448,7 +448,7 @@ function Presentation() {
               borderStyle: "solid",
               borderWidth: 2,
               color: "#00FF99",
-              fontFamily: "Lato",
+              fontFamily: "Courier Prime",
               borderRadius: 50,
               fontSize: 18,
               ":hover": {
@@ -513,9 +513,10 @@ function Presentation() {
         <Grid2
           container
           direction={"row"}
-          spacing={2}
+          spacing={0}
           mb={-3}
-          //   pl={5}
+          ml={-5}
+            // pl={5}
           justifyContent={"space-around"}
           alignItems={"center"}>
           <Grid2 size={3}>
@@ -526,17 +527,17 @@ function Presentation() {
               }}>
               <Typography
                 style={{
-                  fontFamily: "Lato",
+                  fontFamily: "Courier Prime",
                   color: "#fff",
-                  fontSize: 80,
+                  fontSize: 50,
                   fontWeight: 700,
                 }}>
                 {AnneExperience}
               </Typography>
-              <div style={{ marginLeft: 5, marginTop: 25 }}>
+              <div style={{ marginLeft: 5, marginTop: 10 }}>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 20,
                   }}>
@@ -544,7 +545,7 @@ function Presentation() {
                 </Typography>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 20,
                   }}>
@@ -561,7 +562,7 @@ function Presentation() {
               }}>
               <Typography
                 style={{
-                  fontFamily: "Lato",
+                  fontFamily: "Courier Prime",
                   color: "#fff",
                   fontSize: 50,
                   fontWeight: 700,
@@ -571,7 +572,7 @@ function Presentation() {
               <div style={{ marginLeft: 5, marginTop: 20 }}>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 20,
                   }}>
@@ -584,7 +585,9 @@ function Presentation() {
         <Grid2
           container
           direction={"row"}
-          spacing={2}
+          spacing={0}
+          m={-5}
+          mt={2}
           //   pl={5}
           justifyContent={"space-around"}
           alignItems={"center"}>
@@ -596,7 +599,7 @@ function Presentation() {
               }}>
               <Typography
                 style={{
-                  fontFamily: "Lato",
+                  fontFamily: "Courier Prime",
                   color: "#fff",
                   fontSize: 40,
                   fontWeight: 700,
@@ -606,7 +609,7 @@ function Presentation() {
               <div style={{ marginLeft: 5, marginTop: 10 }}>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 20,
                   }}>
@@ -614,7 +617,7 @@ function Presentation() {
                 </Typography>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 20,
                   }}>
@@ -631,7 +634,7 @@ function Presentation() {
               }}>
               <Typography
                 style={{
-                  fontFamily: "Lato",
+                  fontFamily: "Courier Prime",
                   color: "#fff",
                   fontSize: 40,
                   fontWeight: 700,
@@ -641,7 +644,7 @@ function Presentation() {
               <div style={{  marginTop: 10 }}>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 20,
                   }}>
@@ -649,7 +652,7 @@ function Presentation() {
                 </Typography>
                 <Typography
                   style={{
-                    fontFamily: "Lato",
+                    fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 20,
                   }}>
