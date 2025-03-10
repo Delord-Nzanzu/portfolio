@@ -23,6 +23,10 @@ const DataTypeCollect = [
   },
 ];
 
+const ServiceID = import.meta.env.VITE_APP_SERVICEID;
+const templeteID = import.meta.env.VITE_APP_TEMPLETEID;
+const idKey = import.meta.env.VITE_APP_APIKEY;
+
 function Contacter() {
   const [selectDataType, setSelectDataType] = useState<any>();
 
@@ -45,14 +49,14 @@ function Contacter() {
     onSubmit: (e) => {
       emailjs
         .send(
-          "service_swgsgf4", // Remplace par ton ID de service
-          "template_em7sbxw", // Remplace par ton ID de modèle
+          ServiceID, // Remplace par ton ID de service
+          templeteID, // Remplace par ton ID de modèle
           {
             email: e.email,
             message: `service: ${selectDataType.value}\n description: ${e.desce} \n phone: ${e.phone} \n Nom: ${e.nom}-${e.prenom} \n email :${e.email}`,
             name: `${e.nom}-${e.prenom}`,
           },
-          "Sw7A_JJOVP0U8JVTA" // Remplace par ton User ID EmailJS
+          idKey // Remplace par ton User ID EmailJS
         )
         .then(
           () => {
