@@ -24,7 +24,7 @@ const DataTypeCollect = [
 ];
 
 function Contacter() {
-  const [selectDataType, setSelectDataType] = useState();
+  const [selectDataType, setSelectDataType] = useState<any>();
 
   const sendEmail = useFormik({
     enableReinitialize: false,
@@ -55,7 +55,7 @@ function Contacter() {
           "Sw7A_JJOVP0U8JVTA" // Remplace par ton User ID EmailJS
         )
         .then(
-          (response) => {
+          () => {
             // console.log("E-mail envoyé avec succès ✅", response);
             <Alert severity="success">`E-mail envoyé avec succès ✅.`</Alert>;
           },
@@ -116,9 +116,9 @@ function Contacter() {
                     sendEmail.touched.prenom && sendEmail.errors.prenom && true
                   }
                   labelError={
-                    sendEmail.touched.prenom &&
-                    sendEmail.errors.prenom &&
-                    sendEmail.touched.prenom
+                    sendEmail.touched.prenom && sendEmail.errors.prenom
+                      ? sendEmail.errors.prenom // Utilise le message d'erreur ici
+                      : null
                   }
                 />
               </Grid2>
@@ -132,9 +132,9 @@ function Contacter() {
                   onBlur={sendEmail.handleBlur}
                   error={sendEmail.touched.nom && sendEmail.errors.nom && true}
                   labelError={
-                    sendEmail.touched.nom &&
-                    sendEmail.errors.nom &&
-                    sendEmail.touched.nom
+                    sendEmail.touched.nom && sendEmail.errors.nom
+                      ? sendEmail.errors.nom // Utilise le message d'erreur ici
+                      : null
                   }
                 />
               </Grid2>
@@ -152,9 +152,9 @@ function Contacter() {
                     sendEmail.touched.email && sendEmail.errors.email && true
                   }
                   labelError={
-                    sendEmail.touched.email &&
-                    sendEmail.errors.email &&
-                    sendEmail.touched.email
+                    sendEmail.touched.email && sendEmail.errors.email
+                      ? sendEmail.errors.email // Utilise le message d'erreur ici
+                      : null
                   }
                 />
               </Grid2>
@@ -170,9 +170,9 @@ function Contacter() {
                     sendEmail.touched.phone && sendEmail.errors.phone && true
                   }
                   labelError={
-                    sendEmail.touched.phone &&
-                    sendEmail.errors.phone &&
-                    sendEmail.touched.phone
+                    sendEmail.touched.phone && sendEmail.errors.phone
+                      ? sendEmail.errors.phone // Utilise le message d'erreur ici
+                      : null
                   }
                 />
               </Grid2>
@@ -197,15 +197,17 @@ function Contacter() {
                     sendEmail.touched.desce && sendEmail.errors.desce && true
                   }
                   labelError={
-                    sendEmail.touched.desce &&
-                    sendEmail.errors.desce &&
-                    sendEmail.touched.desce
+                    sendEmail.touched.desce && sendEmail.errors.desce
+                      ? sendEmail.errors.desce // Utilise le message d'erreur ici
+                      : null
                   }
                 />
               </div>
             </Box>
             <Button
-              onClick={sendEmail.handleSubmit}
+              onClick={(_: React.MouseEvent<HTMLButtonElement>) =>
+                sendEmail.handleSubmit()
+              }
               variant="contained"
               sx={{
                 bgcolor: "#00FF99",

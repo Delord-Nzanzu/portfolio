@@ -7,7 +7,9 @@ import {
   FormControl,
   FormHelperText,
 } from "@mui/material";
-import { ChangeEventHandler, KeyboardEventHandler, ReactNode } from "react";
+import { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler, ReactNode } from "react";
+
+
 
 interface ITextFieldInputProps {
   label?: string;
@@ -17,11 +19,11 @@ interface ITextFieldInputProps {
   multiline?: boolean;
   placeholder?: string;
   type?: string;
-  onBlur?: () => void;
+  onBlur?:  FocusEventHandler<HTMLInputElement>;
   invalid?: boolean;
-  error?: boolean;
+  error?:  boolean | "" | undefined;
   visi?: boolean;
-  labelError?: string;
+  labelError?: string | "" | undefined | null;
   onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   startIcon?: ReactNode;
   showPassWord?: () => void;
