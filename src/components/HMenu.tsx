@@ -57,7 +57,7 @@ function HMenu() {
               fontSize: 30,
               fontWeight: "bold",
             }}>
-            Delord<span style={{ color: "#00FF99" }}> .</span>
+            Delord<span style={{ color: "#00FF99" }}>.</span>
           </Typography>
           <Typography
             sx={{
@@ -73,7 +73,7 @@ function HMenu() {
               fontSize: 30,
               fontWeight: "bold",
             }}>
-            Delord<span style={{ color: "#00FF99" }}> .</span>
+            Delord<span style={{ color: "#00FF99" }}>.</span>
           </Typography>
           <Box
             sx={{
@@ -130,8 +130,11 @@ function HMenu() {
         <Drawer
           open={open}
           onClose={toggleDrawer(false)}
-          sx={{
-            bgcolor: "#1C1C22",
+          PaperProps={{
+            sx: {
+              bgcolor: "#1C1C22", // Appliquer le fond au contenu du Drawer
+              color: "#FFF", // Modifier la couleur du texte si nécessaire
+            },
           }}>
           <Box
             sx={{ width: 250 }}
@@ -151,14 +154,15 @@ function HMenu() {
                 textAlign: "center",
                 fontSize: 30,
                 margin: 5,
+                color:"#fff"
               }}>
-              Delord<span style={{ color: "#00FF99" }}> .</span>
+              Delord<span style={{ color: "#00FF99" }}>.</span>
             </Typography>
             {navItems.map((item) => (
               <Button
                 fullWidth
                 key={item.id}
-                sx={{ color: "#000", fontFamily: "Lato" }}
+                sx={{ color: "#fff", fontFamily: "Lato" }}
                 onClick={() => nav(item.link)}>
                 {item.text}
               </Button>
@@ -172,7 +176,7 @@ function HMenu() {
               fullWidth
               sx={{
                 //   bgcolor: "#00FF99",
-                color: "#000",
+                color: "#fff",
                 fontFamily: "Lato",
                 borderRadius: 50,
                 fontWeight: 700,

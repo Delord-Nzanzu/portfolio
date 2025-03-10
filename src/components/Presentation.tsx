@@ -56,7 +56,7 @@ function Presentation() {
                   letterSpacing: 5,
                   fontWeight: "bold",
                 }}>
-                Bonjour, je suis Delord{" "}
+                Bonjour, je suis Delord
                 <span style={{ color: "#00FF99" }}>.</span>
               </Typography>
               <Typography
