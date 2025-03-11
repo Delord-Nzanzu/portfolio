@@ -105,6 +105,21 @@ function Competence() {
               <Card
                 key={key}
                 sx={{
+                  maxWidth: {
+                    xs: 500,
+                    sm: 500,
+                    md: 360,
+                  },
+                  ml: {
+                    xs: 0,
+                    sm: 0,
+                    md: 3,
+                  },
+                  mt: {
+                    xs: 3,
+                    sm: 3,
+                    md: 3,
+                  },
                   width: {
                     xs: 200,
                     sm: 200,

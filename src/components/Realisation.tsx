@@ -105,79 +105,96 @@ function Realisation() {
               réalisation
             </span>{" "}
             témoigne de notre engagement à fournir des solutions innovantes et
-            adaptées aux besoins de nos clients. 🚀✨
+            adaptées aux besoins de nos clients.
           </Typography>
-          <Container
-            style={{
-              flexDirection: "row",
-              display: "flex",
-              flexWrap: "wrap",
-              padding: 5,
-              justifyContent: "start",
-              alignItems: "start",
-              marginTop: 20,
-              width: "100%",
-              minHeight: "100vh",
-            }}>
-            {data.map((e) => (
-              <Card sx={{ maxWidth: 370, ml: 3, mt: 3 }}>
-                <CardMedia sx={{ height: 250 }} image={e.img} title={e.text} />
-                <CardContent>
-                  <Link
-                    to={e.link} // Remplace par ton lien GitHub
-                    target="_blank" // Ouvre le lien dans un nouvel onglet
-                    style={{ textDecoration: "none", color: "#000" }} // Pour enlever le souligné du lien
-                  >
-                    <Typography
-                      gutterBottom
-                      // variant="h3"
-                      component="div"
-                      sx={{
-                        fontFamily: "Courier Prime",
-                        fontWeight: 700,
-                        fontSize: 20,
-                        ":hover": {
-                          color: "#00FF99",
-                          cursor: "pointer",
-                        },
-                      }}>
-                      {e.text}
-                    </Typography>
-                  </Link>
-                  <Divider />
-                  <Typography
-                    sx={{
-                      color: "text.secondary",
-                      //   fontWeight: 700,
-                      fontFamily: "Courier Prime",
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      WebkitLineClamp: hidden, // Limite le texte à 2 lignes (ajuste selon tes besoins)
-                      textOverflow: "ellipsis",
-                      fontSize: 18,
-                    }}>
-                    {e.descr}
-                  </Typography>
-                  <div
-                    style={{
-                      flexDirection: "row",
-                      display: "flex",
-                      justifyContent: "end",
-                    }}>
-                    <Button
-                      variant="text"
-                      color="info"
-                      onClick={handleToggleClamp}>
-                      {hidden === 2 ? "Réduire" : "Lire plus"}
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </Container>
         </Grid2>
       </Grid2>
+      <Container
+        sx={{
+          flexDirection: "row",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "start",
+          alignItems: "start",
+          maxWidth: "100%",
+          minHeight: "100vh",
+          pb:5
+        }}>
+        {data.map((e) => (
+          <Card
+            sx={{
+              maxWidth: {
+                xs: 500,
+                sm: 500,
+                md: 360,
+              },
+              ml: {
+                xs: 0,
+                sm: 0,
+                md: 3,
+              },
+              mt:  {
+                xs: 3,
+                sm: 3,
+                md: 3,
+              },
+            }}>
+            <CardMedia sx={{ height: 250 }} image={e.img} title={e.text} />
+            <CardContent>
+              <Link
+                to={e.link} // Remplace par ton lien GitHub
+                target="_blank" // Ouvre le lien dans un nouvel onglet
+                style={{
+                  textDecoration: "none",
+                  color: "#013266",
+                  fontWeight: "bold",
+                }} // Pour enlever le souligné du lien
+              >
+                <Typography
+                  gutterBottom
+                  // variant="h3"
+                  component="div"
+                  sx={{
+                    fontFamily: "Courier Prime",
+                    fontWeight: 700,
+                    fontSize: 20,
+                    ":hover": {
+                      color: "#00FF99",
+                      cursor: "pointer",
+                    },
+                  }}>
+                  {e.text}
+                </Typography>
+              </Link>
+              <Divider />
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  //   fontWeight: 700,
+                  fontFamily: "Courier Prime",
+                  display: "-webkit-box",
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                  WebkitLineClamp: hidden, // Limite le texte à 2 lignes (ajuste selon tes besoins)
+                  textOverflow: "ellipsis",
+                  fontSize: 18,
+                }}>
+                {e.descr}
+              </Typography>
+              <div
+                style={{
+                  flexDirection: "row",
+                  display: "flex",
+                  justifyContent: "end",
+                }}>
+                <Button variant="text" color="info" onClick={handleToggleClamp}>
+                  {hidden === 2 ? "Réduire" : "Lire plus"}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </Container>
     </div>
   );
 }

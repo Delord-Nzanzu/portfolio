@@ -398,7 +398,7 @@ function Presentation() {
               textAlign: "center",
               p: 2,
             }}>
-            Bonjour, je suis Delord <span style={{ color: "#00FF99" }}>.</span>
+            Bonjour, je suis Delord<span style={{ color: "#00FF99" }}>.</span>
           </Typography>
           <Typography
             sx={{
@@ -406,7 +406,7 @@ function Presentation() {
               fontSize: 20,
               color: "#fff",
               letterSpacing: 2,
-              mt: 3,
+              mt: 0,
               lineHeight: 1.8,
               textAlign: "center",
             }}>
