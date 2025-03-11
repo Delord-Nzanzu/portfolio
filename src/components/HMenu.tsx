@@ -24,8 +24,13 @@ function HMenu() {
       link: "/services",
     },
     {
-      text: "Contact",
+      text: "Compétence",
       id: 3,
+      link: "/competence",
+    },
+    {
+      text: "Contact",
+      id: 4,
       link: "/contact",
     },
   ];
@@ -154,7 +159,7 @@ function HMenu() {
                 textAlign: "center",
                 fontSize: 30,
                 margin: 5,
-                color:"#fff"
+                color: "#fff",
               }}>
               Delord<span style={{ color: "#00FF99" }}>.</span>
             </Typography>
