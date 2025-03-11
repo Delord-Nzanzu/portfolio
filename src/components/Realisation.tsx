@@ -14,10 +14,12 @@ import dh from "../assets/droit_humain.png";
 import ht from "../assets/hT.png";
 import bs from "../assets/bs.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const data = [
   {
     id: 1,
+    link: "#",
     text: "Efficacity Syteme de Lutte Contre la Fraude",
     img: fraude,
     descr:
@@ -26,6 +28,7 @@ const data = [
 
   {
     id: 3,
+    link: "#",
     text: "Gestion de Doneur du Sang",
     img: bs,
     descr:
@@ -34,6 +37,7 @@ const data = [
 
   {
     id: 2,
+    link: "https://hubtechnologie.com/",
     text: "Hub Technologie",
     img: ht,
     descr:
@@ -41,6 +45,7 @@ const data = [
   },
   {
     id: 2,
+    link: "#",
     text: "Efficacity Systeme Droit Humain",
     img: dh,
     descr:
@@ -108,27 +113,37 @@ function Realisation() {
               display: "flex",
               flexWrap: "wrap",
               padding: 5,
-              justifyContent: "center",
-              alignItems: "center",
+              justifyContent: "start",
+              alignItems: "start",
               marginTop: 20,
               width: "100%",
               minHeight: "100vh",
             }}>
             {data.map((e) => (
-              <Card sx={{ maxWidth: 345, ml: 3, mt: 3 }}>
-                <CardMedia sx={{ height: 200 }} image={e.img} title={e.text} />
+              <Card sx={{ maxWidth: 370, ml: 3, mt: 3 }}>
+                <CardMedia sx={{ height: 250 }} image={e.img} title={e.text} />
                 <CardContent>
-                  <Typography
-                    gutterBottom
-                    // variant="h3"
-                    component="div"
-                    sx={{
-                      fontFamily: "Courier Prime",
-                      fontWeight: 700,
-                      fontSize: 20,
-                    }}>
-                    {e.text}
-                  </Typography>
+                  <Link
+                    to={e.link} // Remplace par ton lien GitHub
+                    target="_blank" // Ouvre le lien dans un nouvel onglet
+                    style={{ textDecoration: "none", color: "#000" }} // Pour enlever le souligné du lien
+                  >
+                    <Typography
+                      gutterBottom
+                      // variant="h3"
+                      component="div"
+                      sx={{
+                        fontFamily: "Courier Prime",
+                        fontWeight: 700,
+                        fontSize: 20,
+                        ":hover": {
+                          color: "#00FF99",
+                          cursor: "pointer",
+                        },
+                      }}>
+                      {e.text}
+                    </Typography>
+                  </Link>
                   <Divider />
                   <Typography
                     sx={{
