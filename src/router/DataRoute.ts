@@ -1,6 +1,7 @@
 import Competence from "../components/Competence";
 import Contacter from "../components/Contacter";
 import Presentation from "../components/Presentation";
+import Realisation from "../components/Realisation";
 import Service from "../components/Service";
 
 // Définition du type pour les routes
@@ -17,4 +18,6 @@ export const publicRoutes: RouteType[] = [
   { path: "/services", component: Service },
   { path: "/contact", component: Contacter },
   { path: "/competence", component: Competence },
+  { path: "/realisation", component: Realisation },
+
 ];

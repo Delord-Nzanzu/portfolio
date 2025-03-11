@@ -29,8 +29,13 @@ function HMenu() {
       link: "/competence",
     },
     {
-      text: "Contact",
+      text: "Réalisation",
       id: 4,
+      link: "/realisation",
+    },
+    {
+      text: "Contact",
+      id: 5,
       link: "/contact",
     },
   ];
@@ -154,7 +159,7 @@ function HMenu() {
                   xl: "none",
                   md: "none",
                 },
-                fontFamily: "Lato",
+                fontFamily: "Courier Prime",
                 fontWeight: "bold",
                 textAlign: "center",
                 fontSize: 30,
@@ -167,7 +172,7 @@ function HMenu() {
               <Button
                 fullWidth
                 key={item.id}
-                sx={{ color: "#fff", fontFamily: "Lato" }}
+                sx={{ color: "#fff", fontFamily: "Courier Prime" }}
                 onClick={() => nav(item.link)}>
                 {item.text}
               </Button>
@@ -182,7 +187,7 @@ function HMenu() {
               sx={{
                 //   bgcolor: "#00FF99",
                 color: "#fff",
-                fontFamily: "Lato",
+                fontFamily: "Courier Prime",
                 borderRadius: 50,
                 fontWeight: 700,
                 textAlign: "center",
