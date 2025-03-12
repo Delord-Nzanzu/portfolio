@@ -92,7 +92,7 @@ function Realisation() {
                 lg: 25,
                 xl: 25,
               },
-              color: "gray",
+              color: "#fff",
               fontFamily: "Courier Prime",
               mt: 2,
             }}>
