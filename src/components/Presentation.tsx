@@ -191,11 +191,10 @@ function Presentation() {
                   }}>
                   Avez-vous{" "}
                   <span style={{ color: "#00FF99" }}>
-                    une idee d'innovation{" "}
-                  </span>
-                  qui vous trotte dans la tete? N'hesitez pas a{" "}
+                    une idée d'innovation
+                  </span> qui vous trotte dans la tête ? N'hésitez pas à{" "}
                   <span style={{ color: "#00FF99" }}>me contacter</span> afin
-                  que nous puissons enrichir cette idee ensemble
+                  que nous puissions enrichir cette idée ensemble.
                 </Typography>
                 <Button
                   onClick={() => nav("/contact")}
@@ -561,18 +560,18 @@ function Presentation() {
                 <span style={{ color: "#00FF99" }}>Développeur</span>{" "}
                 intelligent ?
               </Typography>
-              <Typography sx={{ color: "#fff", mb: 2 }}>
-                _____ ___ _
-              </Typography>
+              <Typography sx={{ color: "#fff", mb: 2 }}>_____ ___ _</Typography>
               <Typography
                 sx={{
                   fontFamily: "Courier Prime",
                   fontSize: 16,
                   color: "#fff",
                 }}>
-                Avez-vous <span style={{ color: "#00FF99" }}>une idée d'innovation </span>
-                qui vous trotte dans la tete? N'hésitez pas a <span style={{ color: "#00FF99" }}>me contacter</span> afin que
-                nous puissons enrichir cette idée ensemble
+                Avez-vous{" "}
+                <span style={{ color: "#00FF99" }}>une idée d'innovation</span>
+                qui vous trotte dans la tête ? N'hésitez pas à{" "}
+                <span style={{ color: "#00FF99" }}>me contacter</span> afin que
+                nous puissions enrichir cette idée ensemble.
               </Typography>
               <Button
                 onClick={() => nav("/contact")}

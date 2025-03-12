@@ -65,7 +65,6 @@ function Service() {
         </>
       ),
     },
-    
   ];
 
   return (
@@ -105,7 +104,7 @@ function Service() {
               color: "#fff",
               fontFamily: "Courier Prime",
               mt: 1,
-              mb:3
+              mb: 3,
             }}>
             <span
               style={{
@@ -113,7 +112,10 @@ function Service() {
               }}>
               Développeur Fullstack JS/TS
             </span>
-            , Trouve ci-dessous mes services proposes.
+            , Fort d’une expertise approfondie dans le développement web et
+            mobile, j’accompagne les entreprises et les entrepreneurs dans la
+            conception, le développement et l’optimisation de leurs
+            applications.
           </Typography>
 
           <Grid2 container direction={"row"} spacing={5}>
