@@ -12,7 +12,7 @@ function useCounter(targetNumber: number) {
       } else {
         clearInterval(intervalId);
       }
-    }, 100); // Le compteur augmentera tous les 100ms
+    }, 1); // Le compteur augmentera tous les 100ms
 
     return () => clearInterval(intervalId); // Nettoyage lorsque le composant est démonté
   }, [targetNumber]);

@@ -1,10 +1,4 @@
-import {
-  Box,
-  Button,
-  Grid2,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid2, IconButton, Typography } from "@mui/material";
 import HMenu from "./HMenu";
 import imageDelord from "../assets/del1.jpg";
 import { Download, GitHub, LinkedIn, X } from "@mui/icons-material";
@@ -16,7 +10,7 @@ function Presentation() {
   const AnneExperience = useCounter(5);
   const projetContribue = useCounter(15);
   const TechnologiesMaitriser = useCounter(5);
-  const CommuniteCode = useCounter(9965);
+  const CommuniteCode = useCounter(100);
 
   const { handleDownload } = useTelechargementCV();
 
@@ -26,6 +20,7 @@ function Presentation() {
         background: "#1C1C22",
         marginTop: 70,
         minHeight: "100vh",
+        overflow: "hidden",
       }}>
       <HMenu />
       <Grid2
@@ -72,8 +67,8 @@ function Presentation() {
                 avec 5+ ans d’expérience !
                 <span style={{ color: "#00FF99" }}>
                   Expert en Architecture, Expert en programation
-                </span>
-                et Licencié
+                </span>{" "}
+                et Licencié{" "}
                 <span style={{ color: "#00FF99" }}>
                   en Conception et Programmation du Systeme Informatique
                 </span>
@@ -310,10 +305,10 @@ function Presentation() {
                 style={{
                   fontFamily: "Courier Prime",
                   color: "#fff",
-                  fontSize: 80,
+                  fontSize: 65,
                   fontWeight: 700,
                 }}>
-                {CommuniteCode}
+                {CommuniteCode === 100 ? "9999+" : CommuniteCode}
               </Typography>
               <div style={{ marginLeft: 5, marginTop: 25 }}>
                 <Typography
@@ -411,12 +406,9 @@ function Presentation() {
               textAlign: "center",
             }}>
             <span style={{ color: "#00FF99" }}>Développeur FullStack </span>
-            avec 5+ ans d’expérience !
-            <span style={{ color: "#00FF99" }}>
+            avec 5+ ans d’expérience! <span style={{ color: "#00FF99" }}>
               Expert en Architecture, Expert en programation
-            </span>
-            et Licencié
-            <span style={{ color: "#00FF99" }}>
+            </span> et Licencié <span style={{ color: "#00FF99" }}>
               en Conception et Programmation du Systeme Informatique
             </span>
             , j’accompagne mes clients vers une digitalisation réussie, de la
@@ -516,7 +508,7 @@ function Presentation() {
           spacing={0}
           mb={-3}
           ml={-5}
-            // pl={5}
+          // pl={5}
           justifyContent={"space-around"}
           alignItems={"center"}>
           <Grid2 size={3}>
@@ -630,7 +622,7 @@ function Presentation() {
             <div
               style={{
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: "column",
               }}>
               <Typography
                 style={{
@@ -639,9 +631,9 @@ function Presentation() {
                   fontSize: 40,
                   fontWeight: 700,
                 }}>
-                {CommuniteCode}
+                {CommuniteCode === 100 ? "9999+" : CommuniteCode}
               </Typography>
-              <div style={{  marginTop: 10 }}>
+              <div style={{ marginTop: -10 }}>
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",

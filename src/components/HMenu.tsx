@@ -98,7 +98,11 @@ function HMenu() {
             {navItems.map((item) => (
               <Button
                 key={item.id}
-                sx={{ color: "#fff", fontFamily: "Courier Prime" }}
+                sx={{
+                  color: "#fff",
+                  fontFamily: "Courier Prime",
+                  fontWeight: 700,
+                }}
                 onClick={() => nav(item.link)}>
                 {item.text}
               </Button>
@@ -114,6 +118,7 @@ function HMenu() {
                 color: "#000",
                 fontFamily: "Courier Prime",
                 borderRadius: 50,
+                fontWeight: 700,
               }}>
               Rendez-vous gratuit
             </Button>
