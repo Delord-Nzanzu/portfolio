@@ -1,9 +1,17 @@
-import { Box, Button, Grid2, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  Grid2,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import HMenu from "./HMenu";
 import imageDelord from "../assets/del1.jpg";
 import { Download, GitHub, LinkedIn, X } from "@mui/icons-material";
 import useCounter from "../hooks/useCompte";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useTelechargementCV from "../hooks/useTelechargementCV";
 //
 function Presentation() {
@@ -11,6 +19,7 @@ function Presentation() {
   const projetContribue = useCounter(15);
   const TechnologiesMaitriser = useCounter(5);
   const CommuniteCode = useCounter(100);
+  const nav = useNavigate();
 
   const { handleDownload } = useTelechargementCV();
 
@@ -159,6 +168,49 @@ function Presentation() {
                 </div>
               </Grid2>
             </Grid2>
+            <Container sx={{ mt: 5, ml: -3, bgcolor: "##232329" }}>
+              <Card sx={{ bgcolor: "#232329", p: 5 }}>
+                <Typography
+                  sx={{
+                    fontFamily: "Courier Prime",
+                    fontSize: 25,
+                    color: "#fff",
+                  }}>
+                  Vous cherche un{" "}
+                  <span style={{ color: "#00FF99" }}>Développeur</span>{" "}
+                  intelligent ?
+                </Typography>
+                <Typography sx={{ color: "#fff", mb: 2 }}>
+                  __________ _____ ___
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: "Courier Prime",
+                    fontSize: 20,
+                    color: "#fff",
+                  }}>
+                  Avez-vous{" "}
+                  <span style={{ color: "#00FF99" }}>
+                    une idee d'innovation{" "}
+                  </span>
+                  qui vous trotte dans la tete? N'hesitez pas a{" "}
+                  <span style={{ color: "#00FF99" }}>me contacter</span> afin
+                  que nous puissons enrichir cette idee ensemble
+                </Typography>
+                <Button
+                  onClick={() => nav("/contact")}
+                  variant="outlined"
+                  sx={{
+                    borderRadius: 2,
+                    borderWidth: 2,
+                    borderColor: "#00FF99",
+                    color: "#00FF99",
+                    mt: 2,
+                  }}>
+                  Engagez-mois
+                </Button>
+              </Card>
+            </Container>
           </Grid2>
           <Grid2
             size={{ xs: 0, sm: 0, md: 4, lg: 4, xl: 4 }}
@@ -191,6 +243,7 @@ function Presentation() {
             </div>
           </Grid2>
         </Grid2>
+
         <Grid2
           container
           direction={"row"}
@@ -299,7 +352,7 @@ function Presentation() {
             <div
               style={{
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: "column",
               }}>
               <Typography
                 style={{
@@ -310,22 +363,14 @@ function Presentation() {
                 }}>
                 {CommuniteCode === 100 ? "9999+" : CommuniteCode}
               </Typography>
-              <div style={{ marginLeft: 5, marginTop: 25 }}>
+              <div style={{ marginLeft: 5, marginTop: -15 }}>
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
                     color: "#fff",
                     fontSize: 25,
                   }}>
-                  Commits
-                </Typography>
-                <Typography
-                  style={{
-                    fontFamily: "Courier Prime",
-                    color: "#fff",
-                    fontSize: 25,
-                  }}>
-                  de code
+                  Commits de code
                 </Typography>
               </div>
             </div>
@@ -406,9 +451,12 @@ function Presentation() {
               textAlign: "center",
             }}>
             <span style={{ color: "#00FF99" }}>Développeur FullStack </span>
-            avec 5+ ans d’expérience! <span style={{ color: "#00FF99" }}>
+            avec 5+ ans d’expérience!{" "}
+            <span style={{ color: "#00FF99" }}>
               Expert en Architecture, Expert en programation
-            </span> et Licencié <span style={{ color: "#00FF99" }}>
+            </span>{" "}
+            et Licencié{" "}
+            <span style={{ color: "#00FF99" }}>
               en Conception et Programmation du Systeme Informatique
             </span>
             , j’accompagne mes clients vers une digitalisation réussie, de la
@@ -501,6 +549,45 @@ function Presentation() {
               </Link>
             </div>
           </Grid2>
+          <Container sx={{ mt: 5, bgcolor: "##232329" }}>
+            <Card sx={{ bgcolor: "#232329", p: 1 }}>
+              <Typography
+                sx={{
+                  fontFamily: "Courier Prime",
+                  fontSize: 20,
+                  color: "#fff",
+                }}>
+                Vous cherche un{" "}
+                <span style={{ color: "#00FF99" }}>Développeur</span>{" "}
+                intelligent ?
+              </Typography>
+              <Typography sx={{ color: "#fff", mb: 2 }}>
+                _____ ___ _
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Courier Prime",
+                  fontSize: 16,
+                  color: "#fff",
+                }}>
+                Avez-vous <span style={{ color: "#00FF99" }}>une idée d'innovation </span>
+                qui vous trotte dans la tete? N'hésitez pas a <span style={{ color: "#00FF99" }}>me contacter</span> afin que
+                nous puissons enrichir cette idée ensemble
+              </Typography>
+              <Button
+                onClick={() => nav("/contact")}
+                variant="outlined"
+                sx={{
+                  borderRadius: 2,
+                  borderWidth: 2,
+                  borderColor: "#00FF99",
+                  color: "#00FF99",
+                  mt: 2,
+                }}>
+                Engagez-mois
+              </Button>
+            </Card>
+          </Container>
         </Grid2>
         <Grid2
           container
