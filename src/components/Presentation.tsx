@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import HMenu from "./HMenu";
-import imageDelord from "../assets/del1.jpg";
+import imageDelord from "../assets/del1__1_-removebg-preview.png";
 import { Download, GitHub, LinkedIn, X } from "@mui/icons-material";
 import useCounter from "../hooks/useCompte";
 import { Link, useNavigate } from "react-router-dom";
@@ -176,7 +176,7 @@ function Presentation() {
                     fontSize: 25,
                     color: "#fff",
                   }}>
-                  Vous cherche un{" "}
+                  Vous cherchez un{" "}
                   <span style={{ color: "#00FF99" }}>Développeur</span>{" "}
                   intelligent ?
                 </Typography>
@@ -192,7 +192,8 @@ function Presentation() {
                   Avez-vous{" "}
                   <span style={{ color: "#00FF99" }}>
                     une idée d'innovation
-                  </span> qui vous trotte dans la tête ? N'hésitez pas à{" "}
+                  </span>{" "}
+                  qui vous trotte dans la tête ? N'hésitez pas à{" "}
                   <span style={{ color: "#00FF99" }}>me contacter</span> afin
                   que nous puissions enrichir cette idée ensemble.
                 </Typography>
@@ -206,7 +207,7 @@ function Presentation() {
                     color: "#00FF99",
                     mt: 2,
                   }}>
-                  Engagez-mois
+                  Engagez-moi
                 </Button>
               </Card>
             </Container>
@@ -220,13 +221,13 @@ function Presentation() {
                 sx={{
                   width: 400,
                   height: 400,
-                  border: "5px solid green",
+                  border: "2px solid green",
                   borderRadius: "50%", // Coins arrondis
                   overflow: "hidden", // Pour éviter les débordements d'image
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  bgcolor: "#EBE9E8",
+                  // bgcolor: "#EBE9E8",
                 }}>
                 <img
                   src={imageDelord}
@@ -400,16 +401,15 @@ function Presentation() {
           }}>
           <Box
             sx={{
-              width: 200,
-              height: 200,
-              border: "5px solid green",
+              width: 300,
+              height: 300,
+              border: "2px solid green",
               borderRadius: "50%", // Coins arrondis
               overflow: "hidden", // Pour éviter les débordements d'image
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              bgcolor: "#EBE9E8",
-              flexDirection: "row",
+              // bgcolor: "#EBE9E8",
             }}>
             <img
               src={imageDelord}
@@ -556,7 +556,7 @@ function Presentation() {
                   fontSize: 20,
                   color: "#fff",
                 }}>
-                Vous cherche un{" "}
+                Vous cherchez un{" "}
                 <span style={{ color: "#00FF99" }}>Développeur</span>{" "}
                 intelligent ?
               </Typography>
@@ -583,7 +583,7 @@ function Presentation() {
                   color: "#00FF99",
                   mt: 2,
                 }}>
-                Engagez-mois
+                Engagez-moi
               </Button>
             </Card>
           </Container>
