@@ -1,4 +1,4 @@
-import { Divider, Grid2, Typography } from "@mui/material";
+import { Container, Divider, Grid2, Typography } from "@mui/material";
 import HMenu from "./HMenu";
 
 interface service {
@@ -53,10 +53,9 @@ function Service() {
       descr: (
         <>
           Déploiement d'applications sur un{" "}
-          <span style={{ color: "#00FF99" }}>**VPS**</span> avec une
-          configuration optimisée pour garantir des performances élevées, la
-          sécurité et la scalabilité. Mise en place des services backend et
-          frontend,{" "}
+          <span style={{ color: "#00FF99" }}>VPS</span> avec une configuration
+          optimisée pour garantir des performances élevées, la sécurité et la
+          scalabilité. Mise en place des services backend et frontend,{" "}
           <span style={{ color: "#00FF99" }}>
             {" "}
             gestion des bases de données
@@ -66,6 +65,7 @@ function Service() {
         </>
       ),
     },
+    
   ];
 
   return (
@@ -77,51 +77,91 @@ function Service() {
       }}>
       <HMenu />
       <div data-aos="zoom-in-up">
-        <Grid2 container direction={"row"} spacing={5} p={5}>
-          {data.map((e) => (
-            <Grid2 key={e.id} size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
-              <Typography
-                sx={{
-                  fontSize: 50,
-                  fontFamily: "Courier Prime",
-                  color: "#fff",
-                  ":hover": {
-                    color: "#00FF99",
-                  },
-                }}>
-                {e.id}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: 35,
-                  fontFamily: "Courier Prime",
-                  color: "#fff",
-                  ":hover": {
-                    color: "#00FF99",
-                  },
-                }}>
-                {e.text}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: 18,
-                  fontFamily: "Courier Prime",
-                  color: "#fff",
-                }}>
-                {e.descr}
-              </Typography>
-              <Divider
-                sx={{
-                  borderWidth: 2,
-                  color: "#fff",
-                  m: 1,
-                  borderColor: "#fff",
-                  borderStyle: "solid",
-                }}
-              />
-            </Grid2>
-          ))}
-        </Grid2>
+        <Container>
+          <Typography
+            sx={{
+              fontSize: {
+                xs: 30,
+                sm: 30,
+                md: 50,
+                lg: 50,
+                xl: 50,
+              },
+              color: "#fff",
+              fontFamily: "Courier Prime",
+              fontWeight: 700,
+            }}>
+            Mes Services
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: {
+                xs: 20,
+                sm: 20,
+                md: 25,
+                lg: 25,
+                xl: 25,
+              },
+              color: "#fff",
+              fontFamily: "Courier Prime",
+              mt: 1,
+              mb:3
+            }}>
+            <span
+              style={{
+                color: "#00FF99",
+              }}>
+              Développeur Fullstack JS/TS
+            </span>
+            , Trouve ci-dessous mes services proposes.
+          </Typography>
+
+          <Grid2 container direction={"row"} spacing={5}>
+            {data.map((e) => (
+              <Grid2 key={e.id} size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
+                <Typography
+                  sx={{
+                    fontSize: 50,
+                    fontFamily: "Courier Prime",
+                    color: "#fff",
+                    ":hover": {
+                      color: "#00FF99",
+                    },
+                  }}>
+                  {e.id}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: 35,
+                    fontFamily: "Courier Prime",
+                    color: "#fff",
+                    ":hover": {
+                      color: "#00FF99",
+                    },
+                  }}>
+                  {e.text}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: 18,
+                    fontFamily: "Courier Prime",
+                    color: "#fff",
+                  }}>
+                  {e.descr}
+                </Typography>
+                <Divider
+                  sx={{
+                    borderWidth: 2,
+                    color: "#fff",
+                    m: 1,
+                    borderColor: "#fff",
+                    borderStyle: "solid",
+                  }}
+                />
+              </Grid2>
+            ))}
+          </Grid2>
+        </Container>
       </div>
     </div>
   );
