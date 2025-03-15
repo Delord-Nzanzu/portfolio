@@ -13,6 +13,9 @@ Bienvenue sur mon portfolio ! 🚀 Je suis un **Développeur Fullstack JavaScrip
 ✅ Interface moderne et responsive (React.js | React native | Nodejs + Material UI)  
 ✅ Présentation de mes projets avec descriptions détaillées  
 ✅ Formulaire de contact interactif
+✅ Prise de rendez-vous gratuite
+✅ Mes services
+✅ Mes competences
 
 ## 🛠️ Technologies utilisées
 
