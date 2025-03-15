@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# Portfolio Nzanzu Wayire Delord
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur mon portfolio ! 🚀 Je suis un **Développeur Fullstack JavaScript/TypeScript**, spécialisé dans la création d’applications **web et mobiles** performantes et sécurisées. Ce portfolio met en avant mes réalisations et compétences techniques.
 
-Currently, two official plugins are available:
+## 🎨 Aperçu
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Aperçu du portfolio](presentation.png)
 
-## Expanding the ESLint configuration
+🔗 **Démo en ligne** : [delord.hubtechnologie.com](https://delord.hubtechnologie.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚡ Fonctionnalités
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+✅ Interface moderne et responsive (React.js | React native | Nodejs + Material UI)  
+✅ Présentation de mes projets avec descriptions détaillées  
+✅ Formulaire de contact interactif
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Technologies utilisées
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Frontend** : React.js, Material-UI, Tailwind CSS
+- **Mobile** : React native,
+- **Backend** : Node.js, Express.js
+- **Base de données** : MySQL, PostgreSQL, MongoDB
+- **Autres** : Git, CI/CD, Vercel, Firebase
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🚀 Installation et Exécution
+
+Clonez le projet et installez les dépendances :
+
+git clone https://github.com/tonpseudo/portfolio.git
+cd portfolio
+yarn install # ou npm install
+yarn dev # ou npm run dev
+
+## 📬 Me Contacter
+
+💼 [LinkedIn](https://www.linkedin.com/in/nzanzu-wayire-a9a079210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)  
+📧 [Email](mailto:wayirenzanzu@gmail.com)  
+🐙 [GitHub](https://github.com/Delord-Nzanzu)
