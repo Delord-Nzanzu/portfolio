@@ -4,7 +4,7 @@ Bienvenue sur mon portfolio ! 🚀 Je suis un **Développeur Fullstack JavaScrip
 
 ## 🎨 Aperçu
 
-![Aperçu du portfolio](presentation.png)
+![Aperçu du portfolio](public/presentation.png)
 
 🔗 **Démo en ligne** : [delord.hubtechnologie.com](https://delord.hubtechnologie.com/)
 
@@ -26,10 +26,11 @@ Bienvenue sur mon portfolio ! 🚀 Je suis un **Développeur Fullstack JavaScrip
 
 Clonez le projet et installez les dépendances :
 
-git clone https://github.com/tonpseudo/portfolio.git
-cd portfolio
-yarn install # ou npm install
-yarn dev # ou npm run dev
+git clone https://github.com/Delord-Nzanzu/portfolio.git
+
+- cd portfolio
+- yarn install
+- yarn dev
 
 ## 📬 Me Contacter
 
