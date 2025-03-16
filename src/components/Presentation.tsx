@@ -264,7 +264,7 @@ function Presentation() {
                   fontSize: 80,
                   fontWeight: 700,
                 }}>
-                {AnneExperience}
+                +{AnneExperience}
               </Typography>
               <div style={{ marginLeft: 5, marginTop: 25 }}>
                 <Typography
@@ -610,7 +610,7 @@ function Presentation() {
                   fontSize: 50,
                   fontWeight: 700,
                 }}>
-                {AnneExperience}
+                +{AnneExperience}
               </Typography>
               <div style={{ marginLeft: 5, marginTop: 10 }}>
                 <Typography
@@ -625,7 +625,7 @@ function Presentation() {
                   style={{
                     fontFamily: "Courier Prime",
                     color: "#fff",
-                    fontSize: 20,
+                    fontSize: 18,
                   }}>
                   d'expérience
                 </Typography>
