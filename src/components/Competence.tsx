@@ -50,7 +50,7 @@ function Competence() {
       }}>
       <HMenu />
       <Grid2 container direction={"column"}>
-        <Grid2 size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} sx={{ p: 5 }}>
+        <Grid2 size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} sx={{ p: 2 }}>
           <Typography
             sx={{
               fontSize: {
@@ -94,7 +94,7 @@ function Competence() {
               flexDirection: "row",
               display: "flex",
               flexWrap: "wrap",
-              padding: 5,
+              padding: 2,
               justifyContent: "center",
               alignItems: "center",
               marginTop: 20,
@@ -140,7 +140,7 @@ function Competence() {
                   display: "flex",
                   flexDirection: "row",
                   margin: 2,
-                  p: 5,
+                  p: 1,
                 }}>
                 <Tooltip
                   title={e.text}
