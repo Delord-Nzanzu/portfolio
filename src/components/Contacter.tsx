@@ -1,4 +1,10 @@
-import { Box, Button, Grid2, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Grid2,
+  Typography,
+} from "@mui/material";
 import HMenu from "./HMenu";
 import { Email, GpsFixed, Phone } from "@mui/icons-material";
 import TextFiels from "./Forms/TextFiels";
@@ -29,7 +35,7 @@ const templeteID = import.meta.env.VITE_APP_TEMPLETEID;
 const idKey = import.meta.env.VITE_APP_APIKEY;
 
 function Contacter() {
-  const [selectDataType, setSelectDataType] = useState<any>();
+  const [selectDataType, setSelectDataType] = useState<any>("");
   const [desable, setDesable] = useState<boolean>(false);
 
   const sendEmail = useFormik({
@@ -50,44 +56,57 @@ function Contacter() {
     }),
     onSubmit: (e, { resetForm }) => {
       setDesable(true);
-      emailjs
-        .send(
-          ServiceID, // Remplace par ton ID de service
-          templeteID, // Remplace par ton ID de modèle
-          {
-            email: e.email,
-            message: `service: ${selectDataType.value}\n description: ${e.desce} \n phone: ${e.phone} \n Nom: ${e.nom}-${e.prenom} \n email :${e.email}`,
-            name: `${e.nom}-${e.prenom}`,
-          },
-          idKey // Remplace par ton User ID EmailJS
-        )
-        .then(
-          () => {
-            resetForm();
-            setDesable(false);
-            toast.success("E-mail envoyé avec succès ✅.", {
-              position: "top-center",
-              autoClose: 3000, // Durée d'affichage en ms
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              theme: "light",
-            });
-          },
-          () => {
-            toast.error("Erreur lors de l'envoi ❌.", {
-              position: "top-center",
-              autoClose: 3000, // Durée d'affichage en ms
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              theme: "light",
-            });
-            setDesable(false);
-          }
-        );
+      if (selectDataType === "") {
+        setDesable(false);
+        toast.error("Service est obligatoire.", {
+          position: "top-center",
+          autoClose: 3000, // Durée d'affichage en ms
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
+      } else {
+        emailjs
+          .send(
+            ServiceID, // Remplace par ton ID de service
+            templeteID, // Remplace par ton ID de modèle
+            {
+              email: e.email,
+              message: `service: ${selectDataType.value}\n description: ${e.desce} \n phone: ${e.phone} \n Nom: ${e.nom}-${e.prenom} \n email :${e.email}`,
+              name: `${e.nom}-${e.prenom}`,
+            },
+            idKey // Remplace par ton User ID EmailJS
+          )
+          .then(
+            () => {
+              resetForm();
+              setDesable(false);
+              toast.success("E-mail envoyé avec succès ✅.", {
+                position: "top-center",
+                autoClose: 3000, // Durée d'affichage en ms
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+              });
+            },
+            () => {
+              toast.error("Erreur lors de l'envoi ❌.", {
+                position: "top-center",
+                autoClose: 3000, // Durée d'affichage en ms
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "light",
+              });
+              setDesable(false);
+            }
+          );
+      }
     },
   });
 
@@ -244,7 +263,11 @@ function Contacter() {
                 },
                 p: 1,
               }}>
-              Envoyer
+              {desable ? (
+                <CircularProgress size={20} color="primary" />
+              ) : (
+                "Envoyer"
+              )}
             </Button>
           </Box>
         </Grid2>
@@ -254,7 +277,7 @@ function Contacter() {
             mt: {
               xs: 1,
               sm: 1,
-              md: 40,
+              md: 60,
             },
             ml: {
               xs: 3,
