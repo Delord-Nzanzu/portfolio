@@ -73,7 +73,7 @@ function Presentation() {
                   lineHeight: 1.8,
                 }}>
                 <span style={{ color: "#00FF99" }}>Développeur FullStack </span>
-                avec +5 ans d’expérience !
+                avec 5+= ans d’expérience !
                 <span style={{ color: "#00FF99" }}>
                   Expert en Architecture, Expert en programation
                 </span>{" "}
