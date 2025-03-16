@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import { toast } from "react-toastify";
 
 const DataTypeCollect = [
   {
@@ -47,7 +48,7 @@ function Contacter() {
       desce: yup.string().required("les champs est obligatoire"),
       phone: yup.string().required("les champs est obligatoire"),
     }),
-    onSubmit: (e) => {
+    onSubmit: (e, { resetForm }) => {
       setDesable(true);
       emailjs
         .send(
@@ -62,11 +63,28 @@ function Contacter() {
         )
         .then(
           () => {
+            resetForm();
             setDesable(false);
-            alert("E-mail envoyé avec succès ✅.");
+            toast.success("E-mail envoyé avec succès ✅.", {
+              position: "top-center",
+              autoClose: 3000, // Durée d'affichage en ms
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "light",
+            });
           },
           () => {
-            alert("Erreur lors de l'envoi ❌.");
+            toast.error("Erreur lors de l'envoi ❌.", {
+              position: "top-center",
+              autoClose: 3000, // Durée d'affichage en ms
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "light",
+            });
             setDesable(false);
           }
         );
@@ -81,14 +99,14 @@ function Contacter() {
         minHeight: "100vh",
       }}>
       <HMenu />
-      <Grid2 container direction={"row"} spacing={5}>
+      <Grid2 container direction={"row"} spacing={2}>
         <Grid2 size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }} m={2}>
           <Box
             sx={{
               minHeight: "80vh",
               borderRadius: 2,
               bgcolor: "#27272C",
-              p: 5,
+              p: 1,
             }}>
             <Typography
               style={{
@@ -219,9 +237,12 @@ function Contacter() {
                 bgcolor: "#00FF99",
                 color: "#000",
                 fontFamily: "Courier Prime",
-                borderRadius: 50,
-                width: "25%",
-                p: 2,
+                width: {
+                  xs: "100%",
+                  sm: "100%",
+                  md: "25%",
+                },
+                p: 1,
               }}>
               Envoyer
             </Button>
@@ -229,7 +250,18 @@ function Contacter() {
         </Grid2>
         <Grid2
           size={{ xs: 12, sm: 12, md: 5, lg: 5, xl: 5 }}
-          sx={{ mt: 40, ml: 1 }}>
+          sx={{
+            mt: {
+              xs: 1,
+              sm: 1,
+              md: 40,
+            },
+            ml: {
+              xs: 3,
+              sm: 3,
+              md: 1,
+            },
+          }}>
           <Box
             sx={{
               flexDirection: "row",
