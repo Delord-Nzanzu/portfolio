@@ -67,7 +67,7 @@ function Realisation() {
       }}>
       <HMenu />
       <Grid2 container direction={"column"}>
-        <Grid2 size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} sx={{ p: 5 }}>
+        <Grid2 size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} sx={{ p: 2 }}>
           <Typography
             sx={{
               fontSize: {
