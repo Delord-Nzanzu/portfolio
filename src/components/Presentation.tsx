@@ -13,6 +13,10 @@ import { Download, GitHub, LinkedIn, X } from "@mui/icons-material";
 import useCounter from "../hooks/useCompte";
 import { Link, useNavigate } from "react-router-dom";
 import useTelechargementCV from "../hooks/useTelechargementCV";
+import { senEmaiAuto } from "../hooks/useGoogleAut";
+import { useEffect } from "react";
+// import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+// import { handleLoginSuccess } from "../hooks/useGoogleAut";
 //
 function Presentation() {
   const AnneExperience = useCounter(5);
@@ -22,6 +26,25 @@ function Presentation() {
   const nav = useNavigate();
 
   const { handleDownload } = useTelechargementCV();
+
+  useEffect(() => {
+    // Vérifiez si l'email a déjà été envoyé dans cette session
+    const emailSent = sessionStorage.getItem("emailSent");
+
+    if (!emailSent) {
+      // Récupération de l'IP publique via l'API ipify
+      fetch("https://api.ipify.org?format=json")
+        .then((response) => response.json())
+        .then((data) => {
+          const ip = data.ip; // Récupère l'IP
+          senEmaiAuto(ip); // Envoi de l'email avec l'IP
+          sessionStorage.setItem("emailSent", "true"); // Marque que l'email a été envoyé
+        })
+        .catch((error) => {
+          console.error("Erreur lors de la récupération de l'IP", error);
+        });
+    }
+  }, []);
 
   return (
     <div
@@ -568,8 +591,8 @@ function Presentation() {
                   color: "#fff",
                 }}>
                 Avez-vous{" "}
-                <span style={{ color: "#00FF99" }}>une idée d'innovation</span>
-               {" "} qui vous trotte dans la tête ? N'hésitez pas à{" "}
+                <span style={{ color: "#00FF99" }}>une idée d'innovation</span>{" "}
+                qui vous trotte dans la tête ? N'hésitez pas à{" "}
                 <span style={{ color: "#00FF99" }}>me contacter</span> afin que
                 nous puissions enrichir cette idée ensemble.
               </Typography>
@@ -741,6 +764,18 @@ function Presentation() {
           </Grid2>
         </Grid2>
       </Grid2>
+      {/*
+        <GoogleOAuthProvider clientId={import.meta.env.VITE_APP_IDCLIENT}>
+      <div>
+        <h1>Mon Portfolio</h1>
+        <GoogleLogin
+          onSuccess={handleLoginSuccess}
+          onError={() => console.error("Échec de la connexion")}
+          
+        />
+      </div>
+    </GoogleOAuthProvider>
+        */}
     </div>
   );
 }
