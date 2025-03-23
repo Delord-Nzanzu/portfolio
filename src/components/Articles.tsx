@@ -58,6 +58,7 @@ const Articles = () => {
                   fontSize: 25,
                   color: "#fff",
                   fontWeight: "bold",
+                  textDecoration:"underline"
                 }}>
                 {e.title}
               </Typography>
