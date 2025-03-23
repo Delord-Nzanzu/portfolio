@@ -43,9 +43,9 @@ const Articles = () => {
                 ":hover": {
                   bgcolor: "#fff",
                   cursor: "pointer",
-                  transform: "scale(1.02)", // Agrandir légèrement la carte au survol
+                  transform: "scale(1.05)", // Agrandir légèrement la carte au survol
                   boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)", // Ajoute une ombre portée lors du survol
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease", // Transition fluide pour l'agrandissement et l'ombre
+                  transition: "transform 1s ease, box-shadow 1s ease", // Transition fluide pour l'agrandissement et l'ombre
                 },
                 ":hover .title": {
                   color: "#232329", // Change la couleur du texte au survol (sur l'élément avec la classe 'title')
