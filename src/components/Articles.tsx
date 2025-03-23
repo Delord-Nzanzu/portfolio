@@ -1,4 +1,4 @@
-import { Card, Divider, Grid2, Typography } from "@mui/material";
+import { Button, Card, Divider, Grid2, Typography } from "@mui/material";
 import { dataArticle } from "../data/Data";
 import { Link } from "react-router-dom";
 
@@ -58,7 +58,7 @@ const Articles = () => {
                   fontSize: 25,
                   color: "#fff",
                   fontWeight: "bold",
-                  textDecoration:"underline"
+                  textDecoration: "underline",
                 }}>
                 {e.title}
               </Typography>
@@ -73,6 +73,19 @@ const Articles = () => {
             </Card>
           </Link>
         ))}
+        <Button
+          component={Link}
+          target="_blank"
+          to="https://medium.com/@wayirenzanzu"
+          variant="text"
+          sx={{
+            fontFamily: "Courier Prime",
+            fontSize: 20,
+            color: "#00FF99",
+            textDecoration: "underLine",
+          }}>
+          Voir plus
+        </Button>
       </Grid2>
     </Grid2>
   );
