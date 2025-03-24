@@ -16,6 +16,7 @@ import useTelechargementCV from "../hooks/useTelechargementCV";
 import { senEmaiAuto } from "../hooks/useGoogleAut";
 import { useEffect } from "react";
 import Articles from "./Articles";
+import ScrollableCards from "./Partenaire";
 // import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 // import { handleLoginSuccess } from "../hooks/useGoogleAut";
 //
@@ -765,6 +766,7 @@ function Presentation() {
           </Grid2>
         </Grid2>
       </Grid2>
+      <ScrollableCards />
       <Articles />
       {/*
         <GoogleOAuthProvider clientId={import.meta.env.VITE_APP_IDCLIENT}>

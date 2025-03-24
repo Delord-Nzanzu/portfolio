@@ -25,7 +25,7 @@ const Articles = () => {
           }}>
           Dernières Écrites
         </Typography>
-        <Divider sx={{ bgcolor: "#fff" }} />
+        {/* <Divider sx={{ bgcolor: "#fff" }} /> */}
         {dataArticle.map((e) => (
           <Link
             style={{ color: "inherit", textDecoration: "none" }}
@@ -39,9 +39,9 @@ const Articles = () => {
                 bgcolor: "#232329",
                 p: 2,
                 m: 1,
-                mt: 2,
+                mt: 0,
                 ":hover": {
-                  bgcolor: "#fff",
+                  bgcolor: "#f0f0f0",
                   cursor: "pointer",
                   transform: "scale(1.05)", // Agrandir légèrement la carte au survol
                   boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)", // Ajoute une ombre portée lors du survol
@@ -60,7 +60,7 @@ const Articles = () => {
                   fontWeight: "bold",
                   textDecoration: "underline",
                 }}>
-                {e.title}
+                {e.title?.toUpperCase()}
               </Typography>
               <Typography
                 sx={{
