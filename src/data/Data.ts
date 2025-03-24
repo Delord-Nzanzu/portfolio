@@ -1,8 +1,8 @@
 import { article } from "../interface/article";
-import isig from "../assets/isig.jpg";
+import isig from "../assets/isig.png";
 import mlinzi from "../assets/mlinzi.png";
 import okonnect from "../assets/okonnect.png";
-import ht from "../assets/HT2.jpg";
+import ht from "../assets/HT2.png";
 import { dataEntreprise } from "../interface/Entreprise";
 import ifedd from "../assets/ifedd.png";
 
@@ -32,11 +32,6 @@ export const dataArticle: article[] = [
 
 export const dataEntre: dataEntreprise[] = [
   {
-    title: "MLINZI corporation",
-    image: mlinzi,
-    link: "https://tinyurl.com/yc3z9atw",
-  },
-  {
     title: "IFEDD",
     image: ifedd,
     link: "https://ifedd-rdc.org/",
@@ -52,7 +47,12 @@ export const dataEntre: dataEntreprise[] = [
     link: "https://hubtechnologie.com/",
   },
   {
-    title: "ISIG",
+    title: "MLINZI corporation",
+    image: mlinzi,
+    link: "https://tinyurl.com/yc3z9atw",
+  },
+  {
+    title: "Institut Supérieur d'Informatique et de Gestion (ISIG)",
     image: isig,
     link: "https://isig.ac.cd",
   },

@@ -30,6 +30,7 @@ const ScrollableCards = () => {
       style={{
         marginLeft: 15,
         marginRight: 15,
+        marginBottom: 20,
       }}>
       <Typography
         sx={{
@@ -84,6 +85,7 @@ const ScrollableCards = () => {
                   minWidth: 350,
                   maxWidth: 350,
                   borderRadius: 2,
+                  bgcolor: "#232329",
                   boxShadow: 3,
                   ":hover": {
                     bgcolor: "#fff",
@@ -92,30 +94,36 @@ const ScrollableCards = () => {
                     boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)", // Ajoute une ombre portée lors du survol
                     transition: "transform 1s ease, box-shadow 1s ease", // Transition fluide pour l'agrandissement et l'ombre
                   },
+                  ":hover .title": {
+                    color: "#232329", // Change la couleur du texte au survol (sur l'élément avec la classe 'title')
+                  },
                 }}>
-                <CardMedia
-                  component="img"
-                  // height="140"
-                  image={item.image}
-                  alt={item.title}
-                  sx={{
-                    height: 140,
-                    width: {
-                      xs: 300,
-                      sm: "100%",
-                    },
-                    objectFit: "contain",
-                  }}
-                />
+                <Typography textAlign={"center"}>
+                  <CardMedia
+                    component="img"
+                    // height="140"
+                    image={item.image}
+                    alt={item.title}
+                    sx={{
+                      height: 140,
+                      width: {
+                        xs: 300,
+                        sm: "100%",
+                      },
+                      objectFit: "contain",
+                    }}
+                  />
+                </Typography>
                 <CardContent>
                   <Typography
+                    className="title"
                     variant="h6"
                     sx={{
                       fontFamily: "Courier Prime",
                       fontSize: 20,
                       fontWeight: 700,
                       textAlign: "center",
-                      color: "#000",
+                      color: "#FFF",
                     }}>
                     {item.title.toUpperCase()}
                   </Typography>
