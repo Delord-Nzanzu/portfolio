@@ -1,4 +1,4 @@
-import { Button, Card, Divider, Grid2, Typography } from "@mui/material";
+import { Button, Card, Grid2, Typography } from "@mui/material";
 import { dataArticle } from "../data/Data";
 import { Link } from "react-router-dom";
 

@@ -4,6 +4,7 @@ import mlinzi from "../assets/mlinzi.png";
 import okonnect from "../assets/okonnect.png";
 import ht from "../assets/HT2.jpg";
 import { dataEntreprise } from "../interface/Entreprise";
+import ifedd from "../assets/ifedd.png";
 
 export const dataArticle: article[] = [
   {
@@ -22,8 +23,7 @@ export const dataArticle: article[] = [
   },
   {
     id: 3,
-    title:
-      "Comprendre git checkout -- ., git reset et git reset --hard HEAD~1",
+    title: "Comprendre git checkout -- ., git reset et git reset --hard HEAD~1",
     description:
       "commandes peuvent être un peu intimidantes, surtout lorsqu’elles affectent directement nos fichiers. Aujourd’hui, on va décrypter trois commandes souvent utilisées pour réinitialiser un projet à un état antérieur :",
     link: "https://tinyurl.com/uss7zsax",
@@ -32,9 +32,14 @@ export const dataArticle: article[] = [
 
 export const dataEntre: dataEntreprise[] = [
   {
-    title: "MLINZI",
+    title: "MLINZI corporation",
     image: mlinzi,
     link: "https://tinyurl.com/yc3z9atw",
+  },
+  {
+    title: "IFEDD",
+    image: ifedd,
+    link: "https://ifedd-rdc.org/",
   },
   {
     title: "O-Konnect",

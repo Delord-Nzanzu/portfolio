@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { dataEntre } from "../data/Data";
+import { Link } from "react-router-dom";
 
 // Définition des données
 
@@ -25,7 +26,11 @@ const ScrollableCards = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        marginLeft: 15,
+        marginRight: 15,
+      }}>
       <Typography
         sx={{
           fontFamily: "Courier Prime",
@@ -66,43 +71,57 @@ const ScrollableCards = () => {
             "&::-webkit-scrollbar": { display: "none" }, // Cache la scrollbar
           }}>
           {dataEntre.map((item, index) => (
-            <Card
-              key={index}
-              sx={{
-                mt: { xs: 2, sm: 0 },
-                minWidth: 350,
-                maxWidth: 350,
-                borderRadius: 2,
-                boxShadow: 3,
-                ":hover": {
-                  bgcolor: "#fff",
-                  cursor: "pointer",
-                  transform: "scale(1.05)", // Agrandir légèrement la carte au survol
-                  boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)", // Ajoute une ombre portée lors du survol
-                  transition: "transform 1s ease, box-shadow 1s ease", // Transition fluide pour l'agrandissement et l'ombre
-                },
-              }}>
-              <CardMedia
-                component="img"
-                // height="140"
-                image={item.image}
-                alt={item.title}
-                sx={{ height: 140, width: "100%", objectFit: "contain" }}
-              />
-              <CardContent>
-                <Typography
-                  variant="h6"
+            <Link
+              style={{ color: "inherit", textDecoration: "none" }}
+              key={item.title}
+              target="_blank"
+              rel="noopener noreferrer"
+              to={`${item.link}`}>
+              <Card
+                key={index}
+                sx={{
+                  mt: { xs: 2, sm: 0 },
+                  minWidth: 350,
+                  maxWidth: 350,
+                  borderRadius: 2,
+                  boxShadow: 3,
+                  ":hover": {
+                    bgcolor: "#fff",
+                    cursor: "pointer",
+                    transform: "scale(1.05)", // Agrandir légèrement la carte au survol
+                    boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)", // Ajoute une ombre portée lors du survol
+                    transition: "transform 1s ease, box-shadow 1s ease", // Transition fluide pour l'agrandissement et l'ombre
+                  },
+                }}>
+                <CardMedia
+                  component="img"
+                  // height="140"
+                  image={item.image}
+                  alt={item.title}
                   sx={{
-                    fontFamily: "Courier Prime",
-                    fontSize: 20,
-                    fontWeight: 700,
-                    textAlign: "center",
-                    color: "#000",
-                  }}>
-                  {item.title.toUpperCase()}
-                </Typography>
-              </CardContent>
-            </Card>
+                    height: 140,
+                    width: {
+                      xs: 300,
+                      sm: "100%",
+                    },
+                    objectFit: "contain",
+                  }}
+                />
+                <CardContent>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontFamily: "Courier Prime",
+                      fontSize: 20,
+                      fontWeight: 700,
+                      textAlign: "center",
+                      color: "#000",
+                    }}>
+                    {item.title.toUpperCase()}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </Box>
 
