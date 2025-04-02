@@ -8,7 +8,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function HMenu() {
@@ -51,8 +51,7 @@ function HMenu() {
     SetChangeColor(link);
     nav(link);
   };
-
-  useEffect(() => {}, [changeColor]);
+  
 
   return (
     <div>
