@@ -1,12 +1,10 @@
 import { Container, Divider, Grid2, Typography } from "@mui/material";
 import HMenu from "./HMenu";
 import {
-  
   DesktopWindows,
   Hardware,
   PhoneAndroid,
   VpnKeySharp,
-  
 } from "@mui/icons-material";
 
 interface service {
