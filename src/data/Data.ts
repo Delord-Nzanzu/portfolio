@@ -25,7 +25,7 @@ export const dataArticle: article[] = [
     id: 3,
     title: "Comprendre git checkout -- ., git reset et git reset --hard HEAD~1",
     description:
-      "commandes peuvent être un peu intimidantes, surtout lorsqu’elles affectent directement nos fichiers. Aujourd’hui, on va décrypter trois commandes souvent utilisées pour réinitialiser un projet à un état antérieur :",
+      "Commandes peuvent être un peu intimidantes, surtout lorsqu’elles affectent directement nos fichiers. Aujourd’hui, on va décrypter trois commandes souvent utilisées pour réinitialiser un projet à un état antérieur :",
     link: "https://tinyurl.com/uss7zsax",
   },
 ];

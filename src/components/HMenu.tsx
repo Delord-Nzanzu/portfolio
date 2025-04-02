@@ -8,7 +8,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function HMenu() {
@@ -41,10 +41,19 @@ function HMenu() {
   ];
   const [open, setOpen] = useState<boolean>(false);
   const nav = useNavigate();
+  const [changeColor, SetChangeColor] = useState("");
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
+
+  const goTo = (link: string) => {
+    SetChangeColor(link);
+    nav(link);
+  };
+
+  useEffect(() => {}, [changeColor]);
+
   return (
     <div>
       <AppBar
@@ -99,11 +108,11 @@ function HMenu() {
               <Button
                 key={item.id}
                 sx={{
-                  color: "#fff",
+                  color: changeColor === item.link ? "#00FF99" : "#fff",
                   fontFamily: "Courier Prime",
                   fontWeight: 700,
                 }}
-                onClick={() => nav(item.link)}>
+                onClick={() => goTo(item.link)}>
                 {item.text}
               </Button>
             ))}
@@ -177,8 +186,11 @@ function HMenu() {
               <Button
                 fullWidth
                 key={item.id}
-                sx={{ color: "#fff", fontFamily: "Courier Prime" }}
-                onClick={() => nav(item.link)}>
+                sx={{
+                  color: changeColor === item.link ? "#00FF99" : "#fff",
+                  fontFamily: "Courier Prime",
+                }}
+                onClick={() => goTo(item.link)}>
                 {item.text}
               </Button>
             ))}

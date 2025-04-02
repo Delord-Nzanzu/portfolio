@@ -9,34 +9,44 @@ const data = [
   },
   {
     id: 2,
-    text: "Javascrypt",
+    text: "JavaScrypt",
     img: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
   },
   {
     id: 3,
+    text: "TypeScript",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/800px-Typescript.svg.png",
+  },
+  {
+    id: 4,
     text: "Reactjs",
     img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
   },
 
   {
-    id: 4,
+    id: 5,
     text: "Material UI",
     img: "https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci9iYjEzYWViNTFjNTQ0MjFhN2E1NTQwYTcxMzI4OTVkYz9zaXplPTQ5NiZkZWZhdWx0PXJldHJvIn0.FnWJxluT5VvnfpnQsm2K2I1GK-k0_NAmWtu3G-u3fE0",
   },
   {
-    id: 4,
+    id: 6,
     text: "CSS",
     img: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg",
   },
   {
-    id: 3,
+    id: 7,
     text: "React native",
     img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
   },
   {
-    id: 4,
+    id: 8,
     text: "Sequelize",
     img: "https://sequelize.org/img/logo.svg",
+  },
+  {
+    id: 9,
+    text: "Express",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Expressjs.png/120px-Expressjs.png",
   },
 ];
 
@@ -63,6 +73,20 @@ function Competence() {
               color: "#fff",
               fontFamily: "Courier Prime",
               fontWeight: 700,
+              mt: {
+                xs: 0,
+                sm: 0,
+                md: 0,
+                lg: 0,
+                xl: 0,
+              },
+              ml: {
+                xs: 0,
+                sm: 0,
+                md: 5,
+                lg: 5,
+                xl: 5,
+              },
             }}>
             Mes compétences
           </Typography>
@@ -77,7 +101,20 @@ function Competence() {
               },
               color: "#fff",
               fontFamily: "Courier Prime",
-              mt: 2,
+              mt: {
+                xs: 0,
+                sm: 0,
+                md: 0,
+                lg: 0,
+                xl: 0,
+              },
+              ml: {
+                xs: 0,
+                sm: 0,
+                md: 5,
+                lg: 5,
+                xl: 5,
+              },
             }}>
             <span
               style={{
