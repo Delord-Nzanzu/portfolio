@@ -1,11 +1,12 @@
 import { Container, Divider, Grid2, Typography } from "@mui/material";
 import HMenu from "./HMenu";
 import {
-  DesktopMac,
+  
   DesktopWindows,
+  Hardware,
   PhoneAndroid,
   VpnKeySharp,
-  Web,
+  
 } from "@mui/icons-material";
 
 interface service {
@@ -34,7 +35,7 @@ function Service() {
     {
       id: "02",
       text: "Développement Back-End",
-      icon: <DesktopMac sx={{ color: "#00FF99", fontSize: 100 }} />,
+      icon: <Hardware sx={{ color: "#00FF99", fontSize: 100 }} />,
       descr: (
         <>
           Conception et développement de solutions robustes avec{" "}
