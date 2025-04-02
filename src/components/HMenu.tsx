@@ -10,35 +10,10 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { navItems } from "../data/Data";
 
 function HMenu() {
-  const navItems = [
-    {
-      text: "Accueil",
-      id: 1,
-      link: "/",
-    },
-    {
-      text: "Mes services",
-      id: 2,
-      link: "/services",
-    },
-    {
-      text: "Compétence",
-      id: 3,
-      link: "/competence",
-    },
-    {
-      text: "Réalisation",
-      id: 4,
-      link: "/realisation",
-    },
-    {
-      text: "Contact",
-      id: 5,
-      link: "/contact",
-    },
-  ];
+  
   const [open, setOpen] = useState<boolean>(false);
   const nav = useNavigate();
   const [changeColor, SetChangeColor] = useState("");

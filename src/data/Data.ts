@@ -57,3 +57,32 @@ export const dataEntre: dataEntreprise[] = [
     link: "https://isig.ac.cd",
   },
 ];
+
+
+export const navItems = [
+  {
+    text: "Accueil",
+    id: 1,
+    link: "/",
+  },
+  {
+    text: "Mes services",
+    id: 2,
+    link: "/services",
+  },
+  {
+    text: "Compétence",
+    id: 3,
+    link: "/competence",
+  },
+  {
+    text: "Réalisation",
+    id: 4,
+    link: "/realisation",
+  },
+  {
+    text: "Contact",
+    id: 5,
+    link: "/contact",
+  },
+];
