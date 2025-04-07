@@ -14,6 +14,7 @@ import { useState } from "react";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
+import useMyContext from "../hooks/useMyContext";
 
 const DataTypeCollect = [
   {
@@ -37,6 +38,7 @@ const idKey = import.meta.env.VITE_APP_APIKEY;
 function Contacter() {
   const [selectDataType, setSelectDataType] = useState<any>("");
   const [desable, setDesable] = useState<boolean>(false);
+  const { mode } = useMyContext();
 
   const sendEmail = useFormik({
     enableReinitialize: false,
@@ -113,7 +115,7 @@ function Contacter() {
   return (
     <div
       style={{
-        background: "#1C1C22",
+        background: mode === "light" ? "#fff" : "#1C1C22",
         marginTop: 70,
         minHeight: "100vh",
       }}>
@@ -124,7 +126,7 @@ function Contacter() {
             sx={{
               minHeight: "80vh",
               borderRadius: 2,
-              bgcolor: "#27272C",
+              bgcolor: mode === "light" ? "#fff" : "#27272C",
               p: 1,
             }}>
             <Typography

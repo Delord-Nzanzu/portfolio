@@ -167,8 +167,8 @@ function HMenu() {
                     : "#000",
                 color:
                   mode === "light"
-                    ? theme.palette.common.white
-                    : theme.palette.text.primary,
+                    ? theme.palette.common.black
+                    : theme.palette.text.secondary,
                 "&:hover": {
                   backgroundColor:
                     mode === "light"

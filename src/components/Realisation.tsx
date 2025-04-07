@@ -16,6 +16,7 @@ import bs from "../assets/bs.png";
 import tiva from "../assets/tiva.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useMyContext from "../hooks/useMyContext";
 
 const data = [
   {
@@ -63,13 +64,15 @@ const data = [
 
 function Realisation() {
   const [hidden, setHidden] = useState<any>(4);
+  const { mode } = useMyContext();
+
   const handleToggleClamp = () => {
     setHidden((e: any) => (e === 4 ? 500 : 4)); // Basculer entre 2 et 4 lignes
   };
   return (
     <div
       style={{
-        background: "#1C1C22",
+        background: mode === "light" ? "#fff" : "#1C1C22",
         marginTop: 70,
         minHeight: "100vh",
       }}>
@@ -85,7 +88,7 @@ function Realisation() {
                 lg: 50,
                 xl: 50,
               },
-              color: "#fff",
+              color: mode === "light" ? "#000" : "#fff",
               fontFamily: "Courier Prime",
               fontWeight: 700,
               ml: {
@@ -107,7 +110,7 @@ function Realisation() {
                 lg: 25,
                 xl: 25,
               },
-              color: "#fff",
+              color: mode === "light" ? "#000" : "#fff",
               fontFamily: "Courier Prime",
               mt: {
                 xs: 0,

@@ -6,6 +6,7 @@ import {
   PhoneAndroid,
   VpnKeySharp,
 } from "@mui/icons-material";
+import useMyContext from "../hooks/useMyContext";
 
 interface service {
   id: number | string;
@@ -15,6 +16,7 @@ interface service {
 }
 
 function Service() {
+  const { mode } = useMyContext();
   const data: service[] = [
     {
       id: "01",
@@ -81,7 +83,7 @@ function Service() {
   return (
     <div
       style={{
-        background: "#1C1C22",
+        background:mode==="light"?"#fff": "#1C1C22",
         marginTop: 70,
         minHeight: "100vh",
       }}>
@@ -97,7 +99,7 @@ function Service() {
                 lg: 50,
                 xl: 50,
               },
-              color: "#fff",
+              color: mode === "light" ? "#000" : "#fff",
               fontFamily: "Courier Prime",
               fontWeight: 700,
             }}>
@@ -112,7 +114,7 @@ function Service() {
                 lg: 25,
                 xl: 25,
               },
-              color: "#fff",
+              color: mode === "light" ? "#000" : "#fff",
               fontFamily: "Courier Prime",
               mt: 1,
               mb: 3,
@@ -137,7 +139,7 @@ function Service() {
                     fontSize: 50,
                     fontFamily: "Courier Prime",
                     textAlign: "center",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     ":hover": {
                       color: "#00FF99",
                     },
@@ -148,7 +150,7 @@ function Service() {
                   sx={{
                     fontSize: 35,
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     ":hover": {
                       color: "#00FF99",
                     },
@@ -159,7 +161,7 @@ function Service() {
                   sx={{
                     fontSize: 18,
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                   }}>
                   {e.descr}
                 </Typography>

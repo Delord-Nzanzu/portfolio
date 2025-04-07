@@ -17,7 +17,7 @@ interface ThemeProviderComponentProps {
 }
 
 const ThemeProviderComponent = ({ children }: ThemeProviderComponentProps) => {
-  const [mode, setMode] = useState<"light" | "dark">("light"); // État pour gérer le mode (clair ou sombre)
+  const [mode, setMode] = useState<"light" | "dark">("dark"); // État pour gérer le mode (clair ou sombre)
 
   // Créer un thème basé sur l'état `mode`
   const theme = useMemo(

@@ -1,5 +1,6 @@
 import { Card, Container, Grid2, Tooltip, Typography } from "@mui/material";
 import HMenu from "./HMenu";
+import useMyContext from "../hooks/useMyContext";
 
 const data = [
   {
@@ -51,10 +52,11 @@ const data = [
 ];
 
 function Competence() {
+  const { mode } = useMyContext();
   return (
     <div
       style={{
-        background: "#1C1C22",
+        background: mode === "light" ? "#fff" : "#1C1C22",
         marginTop: 70,
         minHeight: "100vh",
       }}>
@@ -70,7 +72,7 @@ function Competence() {
                 lg: 50,
                 xl: 50,
               },
-              color: "#fff",
+              color: mode === "light" ? "#000" : "#fff",
               fontFamily: "Courier Prime",
               fontWeight: 700,
               mt: {
@@ -99,7 +101,7 @@ function Competence() {
                 lg: 25,
                 xl: 25,
               },
-              color: "#fff",
+              color: mode === "light" ? "#000" : "#fff",
               fontFamily: "Courier Prime",
               mt: {
                 xs: 0,
@@ -131,7 +133,7 @@ function Competence() {
               flexDirection: "row",
               display: "flex",
               flexWrap: "wrap",
-              padding: 2,
+              padding: 1,
               justifyContent: "center",
               alignItems: "center",
               marginTop: 20,
@@ -171,12 +173,12 @@ function Competence() {
                     lg: 150,
                     xl: 150,
                   },
-                  bgcolor: "#232329",
+                  bgcolor: mode === "light" ? "#fff" : "#232329",
                   justifyContent: "center",
                   alignItems: "center",
                   display: "flex",
                   flexDirection: "row",
-                  margin: 2,
+                  margin: 1,
                   p: 1,
                 }}>
                 <Tooltip
