@@ -125,7 +125,7 @@ function HMenu() {
                 backgroundColor:
                   mode === "light"
                     ? "#fff"
-                    : "#000",
+                    : "auto",
                 color:
                   mode === "light"
                     ? theme.palette.common.black
@@ -164,7 +164,7 @@ function HMenu() {
                 backgroundColor:
                   mode === "light"
                     ? "#fff"
-                    : "#000",
+                    : "auto",
                 color:
                   mode === "light"
                     ? theme.palette.common.black
