@@ -7,16 +7,25 @@ import {
   IconButton,
   Toolbar,
   Typography,
+  useTheme,
 } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { navItems } from "../data/Data";
+import useMyContext from "../hooks/useMyContext";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 
 function HMenu() {
-  
+  const { mode,setMode } = useMyContext();
   const [open, setOpen] = useState<boolean>(false);
   const nav = useNavigate();
   const [changeColor, SetChangeColor] = useState("");
+  const theme = useTheme(); // Obtenez le thème de MUI
+
+  const handleToggleTheme = () => {
+    setMode(mode === "light" ? "dark" : "light"); // Bascule entre les modes
+  };
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -26,13 +35,12 @@ function HMenu() {
     SetChangeColor(link);
     nav(link);
   };
-  
 
   return (
     <div>
       <AppBar
         component={"nav"}
-        sx={{ bgcolor: "#1C1C22" }}
+        sx={{ bgcolor: mode==="light"?"#fff": "#1C1C22" }}
         elevation={0}
         position="absolute">
         <Toolbar>
@@ -49,6 +57,7 @@ function HMenu() {
               fontFamily: "Courier Prime",
               fontSize: 30,
               fontWeight: "bold",
+              color: mode==="light"?"#000": "#fff",
             }}>
             Delord<span style={{ color: "#00FF99" }}>.</span>
           </Typography>
@@ -57,7 +66,7 @@ function HMenu() {
               flexGrow: 1,
               display: {
                 xs: "none",
-                sm: "block",
+                sm: "none",
                 lg: "block",
                 xl: "block",
                 md: "block",
@@ -65,14 +74,16 @@ function HMenu() {
               fontFamily: "Courier Prime",
               fontSize: 30,
               fontWeight: "bold",
+              color: mode==="light"?"#000": "#fff",
             }}>
             Delord<span style={{ color: "#00FF99" }}>.</span>
           </Typography>
           <Box
             sx={{
+              // ml:"-20%",
               display: {
                 xs: "none",
-                sm: "block",
+                sm: "none",
                 lg: "block",
                 xl: "block",
                 md: "block",
@@ -82,9 +93,10 @@ function HMenu() {
               <Button
                 key={item.id}
                 sx={{
-                  color: changeColor === item.link ? "#00FF99" : "#fff",
+                  // color: changeColor === item.link ? "#00FF99" : "#fff",
                   fontFamily: "Courier Prime",
                   fontWeight: 700,
+                  color: mode==="light"?"#000": "#fff",
                 }}
                 onClick={() => goTo(item.link)}>
                 {item.text}
@@ -105,6 +117,29 @@ function HMenu() {
               }}>
               Rendez-vous gratuit
             </Button>
+           
+              <IconButton
+                onClick={handleToggleTheme}
+                sx={{
+                  marginLeft: 2,
+                  backgroundColor:
+                    mode === "light"
+                      ? theme.palette.primary.dark
+                      : theme.palette.secondary.light,
+                  color:
+                    mode === "light"
+                      ? theme.palette.common.black
+                      : theme.palette.text.secondary,
+                  "&:hover": {
+                    backgroundColor:
+                      mode === "light"
+                        ? theme.palette.primary.dark
+                        : theme.palette.secondary.dark,
+                  },
+                }}>
+                {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+              </IconButton>
+            
           </Box>
           <Box
             sx={{
@@ -185,6 +220,27 @@ function HMenu() {
               }}>
               Rendez-vous gratuit
             </Button>
+            <IconButton
+                onClick={handleToggleTheme}
+                sx={{
+                  marginLeft: 2,
+                  backgroundColor:
+                    mode === "light"
+                      ? theme.palette.primary.main
+                      : theme.palette.secondary.main,
+                  color:
+                    mode === "light"
+                      ? theme.palette.common.white
+                      : theme.palette.text.primary,
+                  "&:hover": {
+                    backgroundColor:
+                      mode === "light"
+                        ? theme.palette.primary.dark
+                        : theme.palette.secondary.dark,
+                  },
+                }}>
+                {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+              </IconButton>
           </Box>
         </Drawer>
       </AppBar>
