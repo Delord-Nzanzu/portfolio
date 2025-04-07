@@ -1,10 +1,14 @@
 import { Button, Card, Grid2, Typography } from "@mui/material";
 import { dataArticle } from "../data/Data";
 import { Link } from "react-router-dom";
+import useMyContext from "../hooks/useMyContext";
 
 const Articles = () => {
+  const { mode } = useMyContext();
   return (
-    <Grid2 container sx={{ bgcolor: "#232329", p: 1 }}>
+    <Grid2
+      container
+      sx={{ bgcolor: mode === "light" ? "#fff" : "#232329", p: 1 }}>
       <Grid2
         size={{
           xs: 12,
@@ -19,7 +23,7 @@ const Articles = () => {
               xs: 30,
               md: 40,
             },
-            color: "#fff",
+            color: mode === "light" ? "#000" : "#fff",
             fontWeight: 700,
             textAlign: "center",
           }}>
@@ -36,7 +40,7 @@ const Articles = () => {
             <Card
               key={e.id}
               sx={{
-                bgcolor: "#232329",
+                bgcolor: mode==="light"?"#fff": "#232329",
                 p: 2,
                 m: 1,
                 mt: 0,
@@ -56,7 +60,7 @@ const Articles = () => {
                 sx={{
                   fontFamily: "Courier Prime",
                   fontSize: 25,
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   fontWeight: "bold",
                   textDecoration: "underline",
                 }}>

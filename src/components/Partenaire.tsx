@@ -10,11 +10,13 @@ import {
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { dataEntre } from "../data/Data";
 import { Link } from "react-router-dom";
+import useMyContext from "../hooks/useMyContext";
 
 // Définition des données
 
 const ScrollableCards = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { mode } = useMyContext();
 
   // Fonction pour faire défiler les cartes
   const scroll = (direction: "left" | "right") => {
@@ -40,7 +42,7 @@ const ScrollableCards = () => {
             xs: 30,
             md: 40,
           },
-          color: "#fff",
+          color: mode === "light" ? "#000" : "#fff",
           fontWeight: 700,
           textAlign: "center",
         }}>
@@ -54,7 +56,7 @@ const ScrollableCards = () => {
         <IconButton
           sx={{ display: { xs: "none", sm: "flex" } }}
           onClick={() => scroll("left")}>
-          <ArrowBackIos sx={{ color: "#fff" }} />
+          <ArrowBackIos sx={{ color: mode === "light" ? "#000" : "#fff" }} />
         </IconButton>
 
         {/* Conteneur Scrollable */}
@@ -85,7 +87,7 @@ const ScrollableCards = () => {
                   minWidth: 350,
                   maxWidth: 350,
                   borderRadius: 2,
-                  bgcolor: "#232329",
+                  bgcolor: mode==="light"?"#fff": "#232329",
                   boxShadow: 3,
                   ":hover": {
                     bgcolor: "#fff",
@@ -123,7 +125,7 @@ const ScrollableCards = () => {
                       fontSize: 20,
                       fontWeight: 700,
                       textAlign: "center",
-                      color: "#FFF",
+                      color: mode === "light" ? "#000" : "#fff",
                     }}>
                     {item.title.toUpperCase()}
                   </Typography>

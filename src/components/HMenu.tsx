@@ -17,7 +17,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
 function HMenu() {
-  const { mode,setMode } = useMyContext();
+  const { mode, setMode } = useMyContext();
   const [open, setOpen] = useState<boolean>(false);
   const nav = useNavigate();
   const [changeColor, SetChangeColor] = useState("");
@@ -40,7 +40,7 @@ function HMenu() {
     <div>
       <AppBar
         component={"nav"}
-        sx={{ bgcolor: mode==="light"?"#fff": "#1C1C22" }}
+        sx={{ bgcolor: mode === "light" ? "#fff" : "#1C1C22" }}
         elevation={0}
         position="absolute">
         <Toolbar>
@@ -57,7 +57,7 @@ function HMenu() {
               fontFamily: "Courier Prime",
               fontSize: 30,
               fontWeight: "bold",
-              color: mode==="light"?"#000": "#fff",
+              color: mode === "light" ? "#000" : "#fff",
             }}>
             Delord<span style={{ color: "#00FF99" }}>.</span>
           </Typography>
@@ -74,7 +74,7 @@ function HMenu() {
               fontFamily: "Courier Prime",
               fontSize: 30,
               fontWeight: "bold",
-              color: mode==="light"?"#000": "#fff",
+              color: mode === "light" ? "#000" : "#fff",
             }}>
             Delord<span style={{ color: "#00FF99" }}>.</span>
           </Typography>
@@ -96,7 +96,7 @@ function HMenu() {
                   // color: changeColor === item.link ? "#00FF99" : "#fff",
                   fontFamily: "Courier Prime",
                   fontWeight: 700,
-                  color: mode==="light"?"#000": "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                 }}
                 onClick={() => goTo(item.link)}>
                 {item.text}
@@ -117,35 +117,34 @@ function HMenu() {
               }}>
               Rendez-vous gratuit
             </Button>
-           
-              <IconButton
-                onClick={handleToggleTheme}
-                sx={{
-                  marginLeft: 2,
+
+            <IconButton
+              onClick={handleToggleTheme}
+              sx={{
+                marginLeft: 2,
+                backgroundColor:
+                  mode === "light"
+                    ? "#fff"
+                    : "#000",
+                color:
+                  mode === "light"
+                    ? theme.palette.common.black
+                    : theme.palette.text.secondary,
+                "&:hover": {
                   backgroundColor:
                     mode === "light"
                       ? theme.palette.primary.dark
-                      : theme.palette.secondary.light,
-                  color:
-                    mode === "light"
-                      ? theme.palette.common.black
-                      : theme.palette.text.secondary,
-                  "&:hover": {
-                    backgroundColor:
-                      mode === "light"
-                        ? theme.palette.primary.dark
-                        : theme.palette.secondary.dark,
-                  },
-                }}>
-                {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
-              </IconButton>
-            
+                      : theme.palette.secondary.dark,
+                },
+              }}>
+              {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+            </IconButton>
           </Box>
           <Box
             sx={{
               display: {
-                xs: "block",
-                sm: "block",
+                xs: "flex",
+                sm: "flex",
                 lg: "none",
                 xl: "none",
                 md: "none",
@@ -157,6 +156,27 @@ function HMenu() {
                   color: "#00FF99",
                 }}
               />
+            </IconButton>
+            <IconButton
+              onClick={handleToggleTheme}
+              sx={{
+                marginLeft: 2,
+                backgroundColor:
+                  mode === "light"
+                    ? "#fff"
+                    : "#000",
+                color:
+                  mode === "light"
+                    ? theme.palette.common.white
+                    : theme.palette.text.primary,
+                "&:hover": {
+                  backgroundColor:
+                    mode === "light"
+                      ? theme.palette.primary.dark
+                      : theme.palette.secondary.dark,
+                },
+              }}>
+              {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
             </IconButton>
           </Box>
         </Toolbar>
@@ -220,27 +240,6 @@ function HMenu() {
               }}>
               Rendez-vous gratuit
             </Button>
-            <IconButton
-                onClick={handleToggleTheme}
-                sx={{
-                  marginLeft: 2,
-                  backgroundColor:
-                    mode === "light"
-                      ? theme.palette.primary.main
-                      : theme.palette.secondary.main,
-                  color:
-                    mode === "light"
-                      ? theme.palette.common.white
-                      : theme.palette.text.primary,
-                  "&:hover": {
-                    backgroundColor:
-                      mode === "light"
-                        ? theme.palette.primary.dark
-                        : theme.palette.secondary.dark,
-                  },
-                }}>
-                {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
-              </IconButton>
           </Box>
         </Drawer>
       </AppBar>
