@@ -17,6 +17,7 @@ import { senEmaiAuto } from "../hooks/useGoogleAut";
 import { useEffect } from "react";
 import Articles from "./Articles";
 import ScrollableCards from "./Partenaire";
+import useMyContext from "../hooks/useMyContext";
 // import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 // import { handleLoginSuccess } from "../hooks/useGoogleAut";
 //
@@ -26,6 +27,7 @@ function Presentation() {
   const TechnologiesMaitriser = useCounter(5);
   const CommuniteCode = useCounter(100);
   const nav = useNavigate();
+  const { mode } = useMyContext();
 
   const { handleDownload } = useTelechargementCV();
 
@@ -51,7 +53,7 @@ function Presentation() {
   return (
     <div
       style={{
-        background: "#1C1C22",
+        background: mode === "light" ? "#fff" : "#1C1C22",
         marginTop: 70,
         minHeight: "100vh",
         overflow: "hidden",
@@ -81,7 +83,7 @@ function Presentation() {
                 sx={{
                   fontFamily: "Courier Prime",
                   fontSize: 40,
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   letterSpacing: 5,
                   fontWeight: "bold",
                 }}>
@@ -92,7 +94,7 @@ function Presentation() {
                 sx={{
                   fontFamily: "Courier Prime",
                   fontSize: 20,
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   letterSpacing: 2,
                   mt: 3,
                   lineHeight: 1.8,
@@ -193,26 +195,33 @@ function Presentation() {
                 </div>
               </Grid2>
             </Grid2>
-            <Container sx={{ mt: 5, ml: -3, bgcolor: "##232329" }}>
-              <Card sx={{ bgcolor: "#232329", p: 5 }}>
+            <Container
+              sx={{
+                mt: 5,
+                ml: -3,
+                bgcolor: mode === "light" ? "#fff" : "auto",
+              }}>
+              <Card
+                sx={{ bgcolor: mode === "light" ? "#fff" : "#232329", p: 5 }}>
                 <Typography
                   sx={{
                     fontFamily: "Courier Prime",
                     fontSize: 25,
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                   }}>
                   Vous cherchez un{" "}
                   <span style={{ color: "#00FF99" }}>Développeur</span>{" "}
                   intelligent ?
                 </Typography>
-                <Typography sx={{ color: "#fff", mb: 2 }}>
+                <Typography
+                  sx={{ color: mode === "light" ? "#000" : "#fff", mb: 2 }}>
                   __________ _____ ___
                 </Typography>
                 <Typography
                   sx={{
                     fontFamily: "Courier Prime",
                     fontSize: 20,
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                   }}>
                   Avez-vous{" "}
                   <span style={{ color: "#00FF99" }}>
@@ -285,7 +294,7 @@ function Presentation() {
               <Typography
                 style={{
                   fontFamily: "Courier Prime",
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   fontSize: 80,
                   fontWeight: 700,
                 }}>
@@ -295,7 +304,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 25,
                   }}>
                   Années
@@ -303,7 +312,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 25,
                   }}>
                   d'expérience
@@ -320,7 +329,7 @@ function Presentation() {
               <Typography
                 style={{
                   fontFamily: "Courier Prime",
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   fontSize: 80,
                   fontWeight: 700,
                 }}>
@@ -330,7 +339,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 25,
                   }}>
                   Projet
@@ -347,7 +356,7 @@ function Presentation() {
               <Typography
                 style={{
                   fontFamily: "Courier Prime",
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   fontSize: 80,
                   fontWeight: 700,
                 }}>
@@ -357,7 +366,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 25,
                   }}>
                   Technologies
@@ -365,7 +374,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 25,
                   }}>
                   maîtrisées
@@ -382,7 +391,7 @@ function Presentation() {
               <Typography
                 style={{
                   fontFamily: "Courier Prime",
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   fontSize: 65,
                   fontWeight: 700,
                 }}>
@@ -392,7 +401,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 25,
                   }}>
                   Commits de code
@@ -456,7 +465,7 @@ function Presentation() {
             sx={{
               fontFamily: "Courier Prime",
               fontSize: 25,
-              color: "#fff",
+              color: mode === "light" ? "#000" : "#fff",
               letterSpacing: 5,
               fontWeight: "bold",
               textAlign: "center",
@@ -468,7 +477,7 @@ function Presentation() {
             sx={{
               fontFamily: "Courier Prime",
               fontSize: 20,
-              color: "#fff",
+              color: mode === "light" ? "#000" : "#fff",
               letterSpacing: 2,
               mt: 0,
               lineHeight: 1.8,
@@ -573,24 +582,28 @@ function Presentation() {
               </Link>
             </div>
           </Grid2>
-          <Container sx={{ mt: 5, bgcolor: "##232329" }}>
-            <Card sx={{ bgcolor: "#232329", p: 1 }}>
+          <Container
+            sx={{ mt: 5, bgcolor: mode === "light" ? "#fff" : "auto" }}>
+            <Card sx={{ bgcolor: mode === "light" ? "#fff" : "#000", p: 1 }}>
               <Typography
                 sx={{
                   fontFamily: "Courier Prime",
                   fontSize: 20,
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                 }}>
                 Vous cherchez un{" "}
                 <span style={{ color: "#00FF99" }}>Développeur</span>{" "}
                 intelligent ?
               </Typography>
-              <Typography sx={{ color: "#fff", mb: 2 }}>_____ ___ _</Typography>
+              <Typography
+                sx={{ color: mode === "light" ? "#000" : "#fff", mb: 2 }}>
+                _____ ___ _
+              </Typography>
               <Typography
                 sx={{
                   fontFamily: "Courier Prime",
                   fontSize: 16,
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                 }}>
                 Avez-vous{" "}
                 <span style={{ color: "#00FF99" }}>une idée d'innovation</span>{" "}
@@ -631,7 +644,7 @@ function Presentation() {
               <Typography
                 style={{
                   fontFamily: "Courier Prime",
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   fontSize: 50,
                   fontWeight: 700,
                 }}>
@@ -641,7 +654,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 20,
                   }}>
                   Années
@@ -649,7 +662,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 18,
                   }}>
                   d'expérience
@@ -666,7 +679,7 @@ function Presentation() {
               <Typography
                 style={{
                   fontFamily: "Courier Prime",
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   fontSize: 50,
                   fontWeight: 700,
                 }}>
@@ -676,7 +689,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 20,
                   }}>
                   Projet
@@ -703,7 +716,7 @@ function Presentation() {
               <Typography
                 style={{
                   fontFamily: "Courier Prime",
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   fontSize: 40,
                   fontWeight: 700,
                 }}>
@@ -713,7 +726,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 20,
                   }}>
                   Technologies
@@ -721,7 +734,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 20,
                   }}>
                   maîtrisées
@@ -738,7 +751,7 @@ function Presentation() {
               <Typography
                 style={{
                   fontFamily: "Courier Prime",
-                  color: "#fff",
+                  color: mode === "light" ? "#000" : "#fff",
                   fontSize: 40,
                   fontWeight: 700,
                 }}>
@@ -748,7 +761,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 20,
                   }}>
                   Commits
@@ -756,7 +769,7 @@ function Presentation() {
                 <Typography
                   style={{
                     fontFamily: "Courier Prime",
-                    color: "#fff",
+                    color: mode === "light" ? "#000" : "#fff",
                     fontSize: 20,
                   }}>
                   de code
