@@ -13,6 +13,7 @@ import fraude from "../assets/fraude.png";
 import dh from "../assets/droit_humain.png";
 import ht from "../assets/hT.png";
 import bs from "../assets/bs.png";
+import talia from "../assets/TALIA.png";
 import tiva from "../assets/tiva.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -54,11 +55,19 @@ const data = [
   },
   {
     id: 3,
-    link: "#",
-    text: "Gestion de Doneur du Sang",
+    link: "https://cptsnk.com/",
+    text: "Gestion de Doneur de Donneur",
     img: bs,
     descr:
       "Il est un processus crucial pour assurer la disponibilité et la qualité des stocks de sang nécessaires aux traitements médicaux. Ce système repose sur un suivi rigoureux des donneurs, leur qualification, ainsi que sur des protocoles de sécurité et de confidentialité des données. Grâce à l'automatisation et à l'intégration de technologies modernes, la gestion des donneurs permet de garantir une collecte optimale, une distribution efficace et une traçabilité des dons. Cela assure une réponse rapide et adaptée aux besoins médicaux tout en respectant les normes sanitaires et éthiques. 💉❤️",
+  },
+  {
+    id: 30,
+    link: "https://taliasante.com/",
+    text: "Talia Services",
+    img: talia,
+    descr:
+      "Talia Services est une plateforme innovante dédiée à la gestion et à l'optimisation des services de santé. Elle offre une gamme complète de solutions pour les professionnels de la santé, incluant la gestion des rendez-vous, le suivi des patients, la facturation et l'analyse des données médicales. Grâce à son interface conviviale et à ses fonctionnalités avancées, Talia Services facilite la communication entre les patients et les prestataires de soins, améliorant ainsi l'efficacité et la qualité des services de santé. Notre objectif est de transformer l'expérience médicale en rendant les soins plus accessibles, organisés et centrés sur le patient. 🏥💼",
   },
 ];
 
@@ -75,7 +84,8 @@ function Realisation() {
         background: mode === "light" ? "#fff" : "#1C1C22",
         marginTop: 70,
         minHeight: "100vh",
-      }}>
+      }}
+    >
       <HMenu />
       <Grid2 container direction={"column"}>
         <Grid2 size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }} sx={{ p: 2 }}>
@@ -98,7 +108,8 @@ function Realisation() {
                 lg: 5,
                 xl: 5,
               },
-            }}>
+            }}
+          >
             Réalisations
           </Typography>
           <Typography
@@ -126,13 +137,15 @@ function Realisation() {
                 lg: 5,
                 xl: 5,
               },
-            }}>
+            }}
+          >
             vous découvrirez nos projets accomplis, mettant en avant notre
             expertise et notre savoir-faire. Chaque{" "}
             <span
               style={{
                 color: "#00FF99",
-              }}>
+              }}
+            >
               réalisation
             </span>{" "}
             témoigne de notre engagement à fournir des solutions innovantes et
@@ -150,7 +163,8 @@ function Realisation() {
           maxWidth: "100%",
           minHeight: "100vh",
           pb: 5,
-        }}>
+        }}
+      >
         {data.map((e) => (
           <Card
             sx={{
@@ -169,7 +183,8 @@ function Realisation() {
                 sm: 3,
                 md: 3,
               },
-            }}>
+            }}
+          >
             <CardMedia sx={{ height: 250 }} image={e.img} title={e.text} />
             <CardContent>
               <Link
@@ -193,7 +208,8 @@ function Realisation() {
                       color: "#00FF99",
                       cursor: "pointer",
                     },
-                  }}>
+                  }}
+                >
                   {e.text}
                 </Typography>
               </Link>
@@ -209,7 +225,8 @@ function Realisation() {
                   WebkitLineClamp: hidden, // Limite le texte à 2 lignes (ajuste selon tes besoins)
                   textOverflow: "ellipsis",
                   fontSize: 18,
-                }}>
+                }}
+              >
                 {e.descr}
               </Typography>
               <div
@@ -217,7 +234,8 @@ function Realisation() {
                   flexDirection: "row",
                   display: "flex",
                   justifyContent: "end",
-                }}>
+                }}
+              >
                 <Button variant="text" color="info" onClick={handleToggleClamp}>
                   {hidden === 2 ? "Réduire" : "Lire plus"}
                 </Button>
